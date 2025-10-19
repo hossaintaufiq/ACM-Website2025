@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+}
+
+.bg-color {
+    background-color: #1B1F44;
+}
+
+.acm-logo {
+    width: 180px;
+    height: 150px;
+}
+
+.card {
+    width: 800px;
+    height: 550px;
+}
+
+.message-width {
+    width: 580px;
+}
+
+.gc-icon {
+    color: white;
+    border-radius: 100%;
+}
+.technical-icon {
+    color: white;
+    border-radius: 100%;
+}

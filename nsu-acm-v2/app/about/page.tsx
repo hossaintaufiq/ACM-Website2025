@@ -216,18 +216,15 @@ export default function AboutPage() {
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed">
                 ACM publishes over <span className="text-blue-400 font-semibold">50 journals</span>, including the prestigious Journal of the ACM, and two general magazines for computer professionals, Communications of the ACM. ACM desires to provide an immersive student experience, with an educational program that is associated with the business continuously. ACM targets to reinforce confidence and mindfulness—giving students the necessary abilities to perceive and accept opportunities.
               </p>
-              <button className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 px-5 sm:px-6 md:px-8 lg:px-12 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 active:from-blue-800 active:to-purple-800 text-white font-semibold text-xs sm:text-sm md:text-base rounded-lg sm:rounded-xl md:rounded-2xl transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/50 w-full sm:w-auto">
-                By Laws
-              </button>
             </div>
-            <div className="hidden md:flex relative justify-center items-center">
-              <div className="relative w-64 h-64 lg:w-80 lg:h-80">
+            <div className="flex relative justify-center items-center mt-6 md:mt-0">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
                 <Image
                   src="/about/logo.png"
                   alt="ACM Logo"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 1024px) 256px, 320px"
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 320px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl -z-10"></div>
               </div>

@@ -43,26 +43,30 @@ export default function OurEvents() {
 
   // Slider Settings - Simple auto sliding right to left
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    pauseOnHover: false,
-    pauseOnFocus: false,
+    pauseOnHover: true,
+    pauseOnFocus: true,
     cssEase: "linear",
     arrows: false,
-    swipe: false,
-    draggable: false,
-    touchMove: false,
+    swipe: true,
+    draggable: true,
+    touchMove: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: true,
+          swipe: true,
+          draggable: true,
+          touchMove: true,
         },
       },
       {
@@ -70,6 +74,12 @@ export default function OurEvents() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
+          swipe: true,
+          draggable: true,
+          touchMove: true,
+          autoplay: true,
+          autoplaySpeed: 4000,
         },
       },
     ],
@@ -132,7 +142,7 @@ export default function OurEvents() {
 
         {/* Simple Auto Sliding Carousel */}
         {isMounted && (
-          <div className="mt-12 md:mt-16">
+          <div className="mt-12 md:mt-16 our-events-slider">
             <Slider {...settings}>
               {events.map((item, index) => (
                 <CustomSlides key={index} item={item} index={index} />

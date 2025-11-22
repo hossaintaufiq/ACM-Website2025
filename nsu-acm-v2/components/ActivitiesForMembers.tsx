@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 // Professional SVG Icons
 const ResearchIcon = () => (
@@ -164,9 +165,9 @@ export default function ActivitiesForMembers() {
 
         {/* CTA Button */}
         <div className="text-center mt-12">
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50">
+          <Link href="/recruitment" className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50">
             Become A Member
-          </button>
+          </Link>
         </div>
       </div>
     </section>

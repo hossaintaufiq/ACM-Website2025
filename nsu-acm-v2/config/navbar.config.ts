@@ -18,6 +18,10 @@ export const navbarConfig: NavItem[] = [
     href: "/events",
   },
   {
+    label: "Recruitment",
+    href: "/recruitment",
+  },
+  {
     label: "Sponsors",
     href: "/sponsors",
   },
@@ -39,9 +43,6 @@ export const navbarConfig: NavItem[] = [
       },
     ],
   },
-  {
-    label: "Recruitment",
-    href: "/recruitment",
-  },
+  
 ];
 

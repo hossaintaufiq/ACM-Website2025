@@ -258,12 +258,12 @@ export default function ExecutivePanel() {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-16">
+       {/* <div className="text-center mt-16">
           <button className="relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 overflow-hidden group">
             <span className="relative z-10">Become A Member</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
-        </div>
+        </div>*/}
       </div>
 
       <style jsx>{`

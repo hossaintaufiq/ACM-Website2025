@@ -39,5 +39,9 @@ export const navbarConfig: NavItem[] = [
       },
     ],
   },
+  {
+    label: "Recruitment",
+    href: "/recruitment",
+  },
 ];
 

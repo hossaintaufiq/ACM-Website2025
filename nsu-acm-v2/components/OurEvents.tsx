@@ -80,18 +80,19 @@ export default function OurEvents() {
           swipe: true,
           draggable: true,
           touchMove: true,
-          speed: 2000,
-          autoplaySpeed: 2000,
+          speed: 1500,
+          autoplaySpeed: 2500,
+          cssEase: "ease-out",
         },
       },
     ],
   };
 
-  // Professional Slide Component
+  // Professional Slide Component - Optimized for mobile
   const CustomSlides = ({ item, index }: { item: typeof events[0]; index: number }) => {
     return (
       <div className="px-2 sm:px-3 md:px-4">
-        <div className="relative h-[20rem] sm:h-[22rem] md:h-[24rem] lg:h-[22rem] rounded-xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 w-full">
+        <div className="relative h-[20rem] sm:h-[22rem] md:h-[24rem] lg:h-[22rem] rounded-xl overflow-hidden bg-white/5 md:backdrop-blur-md border border-white/10 md:hover:border-white/20 transition-colors duration-200 w-full transform-gpu">
           {/* Subtle Gradient Accent */}
           <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.color}`}></div>
           

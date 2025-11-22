@@ -94,6 +94,8 @@ main, section, div[class*="relative"] {
 .our-events-slider .slick-track {
   transition: transform 2000ms linear !important;
   will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Force single card on mobile - ensure proper width calculation */
@@ -101,16 +103,21 @@ main, section, div[class*="relative"] {
   .our-events-slider {
     width: 100%;
     overflow: hidden;
+    -webkit-overflow-scrolling: touch;
   }
   
   .our-events-slider .slick-list {
     margin: 0 -4px;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
   
   .our-events-slider .slick-track {
     width: 100% !important;
     display: flex !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transition: transform 1500ms ease-out !important;
   }
   
   .our-events-slider .slick-slide {
@@ -118,10 +125,22 @@ main, section, div[class*="relative"] {
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
   
   .our-events-slider .slick-slide > div {
     width: 100% !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Reduce repaints on mobile */
+  .our-events-slider * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
   }
 }
 

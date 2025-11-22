@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
@@ -151,8 +150,6 @@ export default function SponsorsPage() {
       threshold: 0.1,
     });
 
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     return (
       <section
         ref={ref}
@@ -175,42 +172,26 @@ export default function SponsorsPage() {
         </div>
 
         {/* Sponsors Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-8 px-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 px-1">
           {section.sponsors.map((sponsor, idx) => {
             const imagePath = `/sponsors/${sponsor}`;
-            const isHovered = hoveredIndex === idx;
 
             return (
               <div
                 key={idx}
-                className="group relative"
-                onMouseEnter={() => setHoveredIndex(idx)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                className="relative aspect-square flex items-center justify-center"
               >
-                <div className="relative aspect-square bg-white/5 backdrop-blur-sm rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl p-1.5 sm:p-2 md:p-3 lg:p-4 xl:p-6 border border-white/10 hover:border-blue-500/50 active:border-blue-500/70 transition-all duration-300 transform hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-blue-500/20">
-                  {/* Glow Effect */}
-                  {isHovered && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl blur-xl -z-10"></div>
-                  )}
-
-                  {/* Sponsor Logo */}
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <Image
-                      src={imagePath}
-                      alt={sponsor.replace(/\.(png|jpg|jpeg)$/i, "")}
-                      fill
-                      className="object-contain p-0.5 sm:p-1 md:p-1.5 lg:p-2 transform group-hover:scale-110 group-active:scale-95 transition-transform duration-300"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl"></div>
-                </div>
+                <Image
+                  src={imagePath}
+                  alt={sponsor.replace(/\.(png|jpg|jpeg)$/i, "")}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
               </div>
             );
           })}

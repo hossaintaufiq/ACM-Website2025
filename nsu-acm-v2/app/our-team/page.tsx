@@ -8,37 +8,117 @@ interface Team {
   name: string;
   description: string;
   color: string;
-  icon: string;
+  icon: React.ReactNode;
   gradient: string;
 }
+
+// Professional SVG Icons
+const TeamIcons = {
+  Corporate: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Promotions: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 21L17 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 3L12 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 7L17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 11L17 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 15L17 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Provision: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Publications: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 9H9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Web: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+      <path d="M2 12H22" stroke="currentColor" strokeWidth="2"/>
+      <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" strokeWidth="2"/>
+    </svg>
+  ),
+  Admin: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V5C15 6.10457 14.1046 7 13 7H11C9.89543 7 9 6.10457 9 5V5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 12H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 16H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Design: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="12" cy="12" r="2" fill="currentColor"/>
+    </svg>
+  ),
+  Research: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.663 17H14.673M12 3V1M18.364 4.636L17.657 3.929M21 12H19M4 12H2M6.343 4.343L5.636 3.636M3.343 15.657L4.05 16.364M16.657 15.657L15.95 16.364M12 18.469V19A2 2 0 1 1 8 19V18.469" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Cultural: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 19C9 19.7956 9.31607 20.5587 9.87868 21.1213C10.4413 21.6839 11.2044 22 12 22C12.7956 22 13.5587 21.6839 14.1213 21.1213C14.6839 20.5587 15 19.7956 15 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 19C9 18.2044 9.31607 17.4413 9.87868 16.8787C10.4413 16.3161 11.2044 16 12 16C12.7956 16 13.5587 16.3161 14.1213 16.8787C14.6839 17.4413 15 18.2044 15 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 19C9 17.3431 7.65685 16 6 16C4.34315 16 3 17.3431 3 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15 19C15 17.3431 16.3431 16 18 16C19.6569 16 21 17.3431 21 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 19V12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 12V5C9 3.34315 10.3431 2 12 2C13.6569 2 15 3.34315 15 5V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Photography: (
+    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 4H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="12" cy="13" r="4" stroke="currentColor" strokeWidth="2"/>
+    </svg>
+  ),
+};
 
 const mainTeams: Team[] = [
   {
     name: "Team Corporate",
     description: "Sponsorship acquisition and corporate relations",
     color: "from-emerald-500 to-teal-500",
-    icon: "💼",
+    icon: TeamIcons.Corporate,
     gradient: "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
   },
   {
     name: "Team Promotions",
     description: "Graphic design and creative content creation",
     color: "from-blue-500 to-cyan-500",
-    icon: "🎨",
+    icon: TeamIcons.Promotions,
     gradient: "from-blue-500/20 via-cyan-500/20 to-teal-500/20",
   },
   {
     name: "Team Provision",
     description: "Event organization and logistics management",
     color: "from-orange-500 to-red-500",
-    icon: "⚡",
+    icon: TeamIcons.Provision,
     gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
   },
   {
     name: "Team Publications",
     description: "Content writing and public speaking",
     color: "from-purple-500 to-pink-500",
-    icon: "✍️",
+    icon: TeamIcons.Publications,
     gradient: "from-purple-500/20 via-pink-500/20 to-rose-500/20",
   },
 ];
@@ -48,42 +128,42 @@ const floatingGroups: Team[] = [
     name: "Web Group",
     description: "Website development and maintenance",
     color: "from-indigo-500 to-purple-500",
-    icon: "🌐",
+    icon: TeamIcons.Web,
     gradient: "from-indigo-500/20 via-purple-500/20 to-pink-500/20",
   },
   {
     name: "Admin Group",
     description: "Administrative support and coordination",
     color: "from-slate-500 to-gray-500",
-    icon: "📋",
+    icon: TeamIcons.Admin,
     gradient: "from-slate-500/20 via-gray-500/20 to-zinc-500/20",
   },
   {
     name: "Design & Decor Group",
     description: "Event decoration and visual design",
     color: "from-pink-500 to-rose-500",
-    icon: "🎭",
+    icon: TeamIcons.Design,
     gradient: "from-pink-500/20 via-rose-500/20 to-red-500/20",
   },
   {
     name: "Research & Development Group",
     description: "Technical research and innovation projects",
     color: "from-green-500 to-emerald-500",
-    icon: "🔬",
+    icon: TeamIcons.Research,
     gradient: "from-green-500/20 via-emerald-500/20 to-teal-500/20",
   },
   {
     name: "Cultural Group",
     description: "Cultural events and activities",
     color: "from-yellow-500 to-orange-500",
-    icon: "🎪",
+    icon: TeamIcons.Cultural,
     gradient: "from-yellow-500/20 via-orange-500/20 to-red-500/20",
   },
   {
     name: "Photography & Cinematography Group",
     description: "Event documentation and media production",
     color: "from-cyan-500 to-blue-500",
-    icon: "📸",
+    icon: TeamIcons.Photography,
     gradient: "from-cyan-500/20 via-blue-500/20 to-indigo-500/20",
   },
 ];
@@ -141,7 +221,7 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* 3D Card */}
-        <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-2xl ${isFloating ? "hover:shadow-purple-500/30" : "hover:shadow-blue-500/30"}`}>
+        <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-2xl ${isFloating ? "hover:shadow-purple-500/30" : "hover:shadow-blue-500/30"}`}>
           {/* Gradient Background */}
           <div className={`absolute inset-0 bg-gradient-to-br ${team.gradient} opacity-0 group-hover:opacity-100 rounded-2xl sm:rounded-3xl transition-opacity duration-500`}></div>
 
@@ -150,25 +230,27 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
 
           {/* Content */}
           <div className="relative z-10" style={{ transformStyle: "preserve-3d" }}>
-            {/* Icon */}
-            <div className="mb-3 sm:mb-4">
-              <div className={`inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br ${team.color} text-3xl sm:text-4xl md:text-5xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
-                {team.icon}
+            {/* Professional Icon */}
+            <div className="mb-3 sm:mb-4 md:mb-5">
+              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${team.color} p-2 sm:p-2.5 md:p-3 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                <div className="text-white w-full h-full">
+                  {team.icon}
+                </div>
               </div>
             </div>
 
             {/* Title */}
-            <h3 className={`text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r ${team.color} bg-clip-text text-transparent`}>
+            <h3 className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r ${team.color} bg-clip-text text-transparent leading-tight`}>
               {team.name}
             </h3>
 
             {/* Description */}
-            <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
               {team.description}
             </p>
 
             {/* Decorative Element */}
-            <div className={`mt-3 sm:mt-4 h-0.5 sm:h-1 w-full bg-gradient-to-r ${team.color} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
+            <div className={`mt-3 sm:mt-4 h-0.5 w-full bg-gradient-to-r ${team.color} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
           </div>
 
           {/* 3D Edge Highlights */}

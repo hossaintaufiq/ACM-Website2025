@@ -87,6 +87,24 @@ main, section, div[class*="relative"] {
 }
 
 /* Our Events Slider Styles - Mobile Optimized */
+.our-events-slider .slick-list {
+  margin: 0 -8px;
+}
+
+@media (max-width: 640px) {
+  .our-events-slider .slick-list {
+    margin: 0 -4px;
+  }
+  
+  .our-events-slider .slick-slide {
+    padding: 0 4px !important;
+  }
+  
+  .our-events-slider .slick-slide > div {
+    width: 100% !important;
+  }
+}
+
 .our-events-slider .slick-dots {
   bottom: -40px !important;
   display: flex !important;

@@ -41,15 +41,15 @@ export default function OurEvents() {
     },
   ];
 
-  // Slider Settings - Mobile first approach
+  // Slider Settings - react-slick breakpoints apply when screen is SMALLER than breakpoint
   const settings = {
     dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 1, // Default to 1 for mobile
+    slidesToShow: 3, // Default for desktop (> 1024px)
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     pauseOnFocus: true,
     cssEase: "linear",
@@ -59,19 +59,7 @@ export default function OurEvents() {
     touchMove: true,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          dots: true,
-          swipe: true,
-          draggable: true,
-          touchMove: true,
-          autoplaySpeed: 3000,
-        },
-      },
-      {
-        breakpoint: 768,
+        breakpoint: 1024, // When screen < 1024px (tablet)
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -83,7 +71,7 @@ export default function OurEvents() {
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768, // When screen < 768px (mobile)
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

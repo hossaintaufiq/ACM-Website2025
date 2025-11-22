@@ -91,13 +91,28 @@ main, section, div[class*="relative"] {
   margin: 0 -8px;
 }
 
-@media (max-width: 640px) {
+/* Force single card on mobile - ensure proper width calculation */
+@media (max-width: 768px) {
+  .our-events-slider {
+    width: 100%;
+    overflow: hidden;
+  }
+  
   .our-events-slider .slick-list {
     margin: 0 -4px;
+    width: 100%;
+  }
+  
+  .our-events-slider .slick-track {
+    width: 100% !important;
+    display: flex !important;
   }
   
   .our-events-slider .slick-slide {
     padding: 0 4px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
   }
   
   .our-events-slider .slick-slide > div {

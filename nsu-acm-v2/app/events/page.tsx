@@ -215,7 +215,7 @@ export default function EventsPage() {
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-6 px-2 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-              OUR EVENTS
+              OUR FLAGSHIP EVENTS
             </span>
           </h1>
           <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">
@@ -229,6 +229,113 @@ export default function EventsPage() {
           {events.map((event, index) => (
             <EventCard key={index} event={event} index={index} />
           ))}
+        </div>
+
+        {/* Upcoming Events Section */}
+        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 px-2 leading-tight">
+              <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+                UPCOMING EVENTS
+              </span>
+            </h2>
+            <p className="text-slate-400 text-xs sm:text-sm md:text-base lg:text-lg px-2 sm:px-4">
+              Stay tuned for our upcoming events and workshops
+            </p>
+            <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-3 sm:mt-4 md:mt-6 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            {/* Upcoming Event Card 1 */}
+            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300 p-6 sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-blue-400 text-xs sm:text-sm font-semibold">Coming Soon</p>
+                    <p className="text-slate-400 text-xs">Spring 2026</p>
+                  </div>
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">
+                  Tech Innovation Summit
+                </h3>
+                <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-4">
+                  Join us for an exciting tech innovation summit featuring industry leaders, workshops, and networking opportunities.
+                </p>
+                <div className="flex items-center gap-2 text-blue-400 text-xs sm:text-sm font-semibold">
+                  <span>Learn More</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Upcoming Event Card 2 */}
+            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm border border-white/10 hover:border-green-500/50 transition-all duration-300 p-6 sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-green-400 text-xs sm:text-sm font-semibold">Coming Soon</p>
+                    <p className="text-slate-400 text-xs">Spring 2026</p>
+                  </div>
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">
+                  Coding Bootcamp Series
+                </h3>
+                <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-4">
+                  Intensive coding bootcamp sessions covering modern web development, mobile apps, and cloud technologies.
+                </p>
+                <div className="flex items-center gap-2 text-green-400 text-xs sm:text-sm font-semibold">
+                  <span>Learn More</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Upcoming Event Card 3 */}
+            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-orange-600/20 to-red-600/20 backdrop-blur-sm border border-white/10 hover:border-orange-500/50 transition-all duration-300 p-6 sm:p-8 md:col-span-2 lg:col-span-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-orange-400 text-xs sm:text-sm font-semibold">Coming Soon</p>
+                    <p className="text-slate-400 text-xs">Spring 2026</p>
+                  </div>
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">
+                  AI & Machine Learning Workshop
+                </h3>
+                <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-4">
+                  Explore the world of AI and ML with hands-on workshops, expert talks, and practical projects.
+                </p>
+                <div className="flex items-center gap-2 text-orange-400 text-xs sm:text-sm font-semibold">
+                  <span>Learn More</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Gallery Section */}

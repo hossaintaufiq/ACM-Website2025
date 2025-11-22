@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, use } from "react";
+import { useState, use } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface TeamMember {
@@ -289,6 +289,218 @@ function TeamMemberCard({ member, index, gradient, borderColor }: { member: Team
   );
 }
 
+// Unique SVG Designs for Each Team
+function TeamSVG({ slug, color }: { slug: string; color: string }) {
+  const svgClass = `w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto`;
+  
+  switch (slug) {
+    case "team-corporate":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="corporateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Handshake/Business Icon */}
+          <circle cx="200" cy="150" r="120" fill="url(#corporateGrad)" opacity="0.2" />
+          <path d="M150 120 L180 150 L150 180" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className={`text-emerald-400`} fill="none" />
+          <path d="M250 120 L220 150 L250 180" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className={`text-teal-400`} fill="none" />
+          <rect x="140" y="140" width="120" height="20" rx="10" fill="url(#corporateGrad)" />
+          <circle cx="170" cy="150" r="8" fill="currentColor" className={`text-emerald-400`} />
+          <circle cx="230" cy="150" r="8" fill="currentColor" className={`text-teal-400`} />
+        </svg>
+      );
+    
+    case "team-promotions":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="promoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Design/Palette Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#promoGrad)" opacity="0.2" />
+          <path d="M120 150 Q200 100 280 150 Q200 200 120 150" fill="url(#promoGrad)" opacity="0.4" />
+          <circle cx="160" cy="130" r="15" fill="#3b82f6" opacity="0.6" />
+          <circle cx="200" cy="120" r="15" fill="#06b6d4" opacity="0.6" />
+          <circle cx="240" cy="130" r="15" fill="#8b5cf6" opacity="0.6" />
+          <rect x="150" y="160" width="100" height="40" rx="5" fill="url(#promoGrad)" opacity="0.3" />
+        </svg>
+      );
+    
+    case "team-provision":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="provisionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f97316" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#ef4444" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Event/Organization Icon */}
+          <circle cx="200" cy="150" r="110" fill="url(#provisionGrad)" opacity="0.2" />
+          <rect x="130" y="100" width="140" height="100" rx="10" fill="url(#provisionGrad)" opacity="0.3" />
+          <circle cx="160" cy="130" r="8" fill="currentColor" className={`text-orange-400`} />
+          <circle cx="200" cy="130" r="8" fill="currentColor" className={`text-red-400`} />
+          <circle cx="240" cy="130" r="8" fill="currentColor" className={`text-pink-400`} />
+          <rect x="140" y="150" width="120" height="4" rx="2" fill="url(#provisionGrad)" />
+          <rect x="140" y="165" width="100" height="4" rx="2" fill="url(#provisionGrad)" />
+          <rect x="140" y="180" width="110" height="4" rx="2" fill="url(#provisionGrad)" />
+        </svg>
+      );
+    
+    case "team-publications":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="pubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#a855f7" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Writing/Publication Icon */}
+          <circle cx="200" cy="150" r="110" fill="url(#pubGrad)" opacity="0.2" />
+          <rect x="130" y="100" width="140" height="100" rx="5" fill="url(#pubGrad)" opacity="0.3" />
+          <line x1="150" y1="130" x2="250" y2="130" stroke="currentColor" strokeWidth="3" className={`text-purple-400`} />
+          <line x1="150" y1="150" x2="250" y2="150" stroke="currentColor" strokeWidth="3" className={`text-pink-400`} />
+          <line x1="150" y1="170" x2="220" y2="170" stroke="currentColor" strokeWidth="3" className={`text-rose-400`} />
+          <circle cx="160" cy="120" r="5" fill="currentColor" className={`text-purple-400`} />
+        </svg>
+      );
+    
+    case "web-group":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="webGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#a855f7" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Web/Network Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#webGrad)" opacity="0.2" />
+          <circle cx="200" cy="150" r="60" stroke="currentColor" strokeWidth="2" className={`text-indigo-400`} fill="none" />
+          <circle cx="200" cy="150" r="40" stroke="currentColor" strokeWidth="2" className={`text-purple-400`} fill="none" />
+          <circle cx="200" cy="150" r="20" fill="url(#webGrad)" />
+          <line x1="200" y1="50" x2="200" y2="90" stroke="currentColor" strokeWidth="2" className={`text-indigo-400`} />
+          <line x1="200" y1="210" x2="200" y2="250" stroke="currentColor" strokeWidth="2" className={`text-indigo-400`} />
+          <line x1="50" y1="150" x2="90" y2="150" stroke="currentColor" strokeWidth="2" className={`text-purple-400`} />
+          <line x1="310" y1="150" x2="350" y2="150" stroke="currentColor" strokeWidth="2" className={`text-purple-400`} />
+        </svg>
+      );
+    
+    case "admin-group":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="adminGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#64748b" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Admin/Clipboard Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#adminGrad)" opacity="0.2" />
+          <rect x="150" y="100" width="100" height="120" rx="5" fill="url(#adminGrad)" opacity="0.3" />
+          <rect x="160" y="110" width="80" height="15" rx="2" fill="currentColor" className={`text-slate-400`} opacity="0.5" />
+          <line x1="170" y1="140" x2="230" y2="140" stroke="currentColor" strokeWidth="2" className={`text-slate-400`} />
+          <line x1="170" y1="160" x2="230" y2="160" stroke="currentColor" strokeWidth="2" className={`text-gray-400`} />
+          <line x1="170" y1="180" x2="210" y2="180" stroke="currentColor" strokeWidth="2" className={`text-slate-400`} />
+          <circle cx="165" cy="200" r="3" fill="currentColor" className={`text-slate-400`} />
+          <circle cx="200" cy="200" r="3" fill="currentColor" className={`text-gray-400`} />
+        </svg>
+      );
+    
+    case "design-decor-group":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="designGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ec4899" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Design/Decor Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#designGrad)" opacity="0.2" />
+          <rect x="130" y="100" width="140" height="100" rx="10" fill="url(#designGrad)" opacity="0.3" />
+          <circle cx="160" cy="130" r="12" fill="#ec4899" opacity="0.6" />
+          <circle cx="200" cy="120" r="12" fill="#f43f5e" opacity="0.6" />
+          <circle cx="240" cy="130" r="12" fill="#fb7185" opacity="0.6" />
+          <path d="M140 160 Q200 140 260 160" stroke="currentColor" strokeWidth="3" className={`text-pink-400`} fill="none" />
+          <rect x="150" y="180" width="100" height="15" rx="3" fill="url(#designGrad)" opacity="0.4" />
+        </svg>
+      );
+    
+    case "research-development-group":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="rdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#10b981" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Research/Innovation Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#rdGrad)" opacity="0.2" />
+          <circle cx="200" cy="150" r="50" stroke="currentColor" strokeWidth="3" className={`text-green-400`} fill="none" />
+          <path d="M180 130 L200 110 L220 130" stroke="currentColor" strokeWidth="3" className={`text-emerald-400`} fill="none" />
+          <circle cx="200" cy="150" r="8" fill="url(#rdGrad)" />
+          <line x1="200" y1="158" x2="200" y2="200" stroke="currentColor" strokeWidth="3" className={`text-green-400`} />
+          <line x1="150" y1="150" x2="120" y2="150" stroke="currentColor" strokeWidth="2" className={`text-emerald-400`} />
+          <line x1="250" y1="150" x2="280" y2="150" stroke="currentColor" strokeWidth="2" className={`text-emerald-400`} />
+        </svg>
+      );
+    
+    case "cultural-group":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="culturalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#eab308" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Cultural/Performance Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#culturalGrad)" opacity="0.2" />
+          <path d="M150 200 Q200 100 250 200" stroke="currentColor" strokeWidth="4" className={`text-yellow-400`} fill="none" />
+          <circle cx="180" cy="160" r="8" fill="currentColor" className={`text-yellow-400`} />
+          <circle cx="200" cy="150" r="8" fill="currentColor" className={`text-orange-400`} />
+          <circle cx="220" cy="160" r="8" fill="currentColor" className={`text-yellow-400`} />
+          <rect x="170" y="180" width="60" height="30" rx="5" fill="url(#culturalGrad)" opacity="0.4" />
+        </svg>
+      );
+    
+    case "photography-cinematography-group":
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="photoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          {/* Camera/Photography Icon */}
+          <circle cx="200" cy="150" r="100" fill="url(#photoGrad)" opacity="0.2" />
+          <rect x="140" y="120" width="120" height="80" rx="10" fill="url(#photoGrad)" opacity="0.3" />
+          <circle cx="200" cy="160" r="25" stroke="currentColor" strokeWidth="3" className={`text-cyan-400`} fill="none" />
+          <circle cx="200" cy="160" r="15" fill="currentColor" className={`text-blue-400`} opacity="0.3" />
+          <rect x="180" y="200" width="40" height="8" rx="2" fill="url(#photoGrad)" />
+          <circle cx="170" cy="130" r="5" fill="currentColor" className={`text-cyan-400`} />
+        </svg>
+      );
+    
+    default:
+      return (
+        <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="150" r="100" fill="currentColor" className={`text-blue-400`} opacity="0.1" />
+        </svg>
+      );
+  }
+}
+
 function MemberSection({ title, members, color }: { title: string; members: TeamMember[]; color: string }) {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -389,14 +601,25 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
           </p>
         </div>
 
-        {/* Team Description */}
-        <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-8 sm:mb-12 md:mb-16`}>
+        {/* Team Description with Unique SVG */}
+        <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-8 sm:mb-12 md:mb-16 overflow-hidden`}>
           <div className={`absolute inset-0 bg-gradient-to-br ${team.gradient} opacity-0 hover:opacity-100 rounded-2xl sm:rounded-3xl transition-opacity duration-500`}></div>
-          <div className="relative z-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">About {team.name}</h2>
-            <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
-              {team.detailedDescription}
-            </p>
+          
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center relative z-10">
+            {/* Left Side - Content */}
+            <div className="order-2 md:order-1">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
+                About <span className={`bg-gradient-to-r ${team.color} bg-clip-text text-transparent`}>{team.name}</span>
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
+                {team.detailedDescription}
+              </p>
+            </div>
+
+            {/* Right Side - Unique SVG Design */}
+            <div className="order-1 md:order-2 flex justify-center md:justify-end">
+              <TeamSVG slug={resolvedParams.slug} color={team.color} />
+            </div>
           </div>
         </div>
 

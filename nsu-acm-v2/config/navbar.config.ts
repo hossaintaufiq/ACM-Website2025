@@ -18,6 +18,10 @@ export const navbarConfig: NavItem[] = [
     href: "/events",
   },
   {
+    label: "Our Team",
+    href: "/our-team",
+  },
+  {
     label: "Recruitment",
     href: "/recruitment",
   },

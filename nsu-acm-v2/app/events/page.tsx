@@ -142,26 +142,28 @@ export default function EventsPage() {
         <div className="relative group">
           {/* Main Card */}
           <div className={`relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl bg-gradient-to-br ${event.color} p-[2px]`}>
-            <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10">
+            <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10">
               {/* Content Grid */}
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 items-center">
                 {/* Left Side - Text Content */}
                 <div className="order-2 md:order-1">
-                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4">
-                    <div className="text-4xl sm:text-5xl md:text-6xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                      {event.icon}
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent break-words">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-5">
+                    {event.icon && (
+                      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        {event.icon}
+                      </div>
+                    )}
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent break-words leading-tight">
                       {event.name}
                     </h2>
                   </div>
-                  <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6">
+                  <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed mb-4 sm:mb-5 md:mb-6">
                     {event.description}
                   </p>
                   <div className="flex justify-center md:justify-start">
                     <button
                       onClick={() => setSelectedEvent(index)}
-                      className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r ${event.color} text-white font-semibold text-xs sm:text-sm md:text-base transform hover:scale-105 transition-transform duration-300 cursor-pointer`}
+                      className={`px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full bg-gradient-to-r ${event.color} text-white font-semibold text-xs sm:text-sm md:text-base transform hover:scale-105 active:scale-95 transition-transform duration-300 cursor-pointer shadow-lg hover:shadow-xl`}
                     >
                       Learn More
                     </button>
@@ -169,19 +171,19 @@ export default function EventsPage() {
                 </div>
 
                 {/* Right Side - Images */}
-                <div className="order-1 md:order-2">
+                <div className="order-1 md:order-2 w-full">
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                     {event.images.slice(0, 2).map((img, idx) => (
                       <div
                         key={idx}
-                        className="relative aspect-square rounded-lg sm:rounded-xl overflow-hidden group/image"
+                        className="relative aspect-square rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group/image"
                       >
                         <Image
                           src={img}
                           alt={`${event.name} ${idx + 1}`}
                           fill
                           className="object-cover transform group-hover/image:scale-110 transition-transform duration-500"
-                          sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, 25vw"
+                          sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 25vw"
                         />
                         <div className={`absolute inset-0 bg-gradient-to-t ${event.color} opacity-0 group-hover/image:opacity-30 transition-opacity duration-500`}></div>
                       </div>
@@ -201,58 +203,58 @@ export default function EventsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 pt-16 sm:pt-20 md:pt-24">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
         {/* Page Header */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <div className="inline-block mb-3 sm:mb-4">
+        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+          <div className="inline-block mb-2 sm:mb-3 md:mb-4">
             <span className="text-xs sm:text-sm md:text-base text-blue-400 font-semibold uppercase tracking-wider">
               Our Events
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-6 px-2 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
               OUR EVENTS
             </span>
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">
             Join us for exciting competitions, workshops, and tech gatherings that bring together the brightest minds in technology
           </p>
-          <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 sm:mt-6 rounded-full"></div>
+          <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-3 sm:mt-4 md:mt-6 rounded-full"></div>
         </div>
 
         {/* Events List */}
-        <div className="mb-16 md:mb-20 lg:mb-24">
+        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24">
           {events.map((event, index) => (
             <EventCard key={index} event={event} index={index} />
           ))}
         </div>
 
         {/* Gallery Section */}
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24">
-          <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 px-2">
+        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24">
+          <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 px-2 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
                 EVENT GALLERY
               </span>
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base md:text-lg px-2">
+            <p className="text-slate-400 text-xs sm:text-sm md:text-base lg:text-lg px-2 sm:px-4">
               Capturing moments from our amazing events
             </p>
           </div>
 
           {isMounted && (
-            <div className="gallery-slider px-1 sm:px-2">
+            <div className="gallery-slider px-1 sm:px-2 md:px-3">
               <Slider {...gallerySettings}>
                 {galleryImages.map((img, index) => (
                   <div key={index} className="px-1 sm:px-2 md:px-3">
-                    <div className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden group">
+                    <div className="relative aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group">
                       <Image
                         src={img}
                         alt={`Gallery ${index + 1}`}
                         fill
                         className="object-cover transform group-hover:scale-110 transition-transform duration-500"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
@@ -267,46 +269,47 @@ export default function EventsPage() {
       {/* Event Detail Modal */}
       {selectedEvent !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-sm overflow-y-auto"
           onClick={() => setSelectedEvent(null)}
         >
           <div
-            className={`relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl border-2 border-white/10 shadow-2xl ${events[selectedEvent].color.replace('from-', 'border-').replace('to-', '/50')}`}
+            className={`relative max-w-4xl w-full my-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl sm:rounded-2xl md:rounded-3xl border-2 border-white/10 shadow-2xl ${events[selectedEvent].color.replace('from-', 'border-').replace('to-', '/50')}`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedEvent(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-white transition-all duration-300 hover:scale-110"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 active:bg-white/30 rounded-full text-white transition-all duration-300 hover:scale-110 active:scale-95"
+              aria-label="Close modal"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
             {/* Modal Content */}
-            <div className="p-6 sm:p-8 md:p-10">
+            <div className="p-4 sm:p-6 md:p-8 lg:p-10">
               {/* Event Header */}
-              <div className="mb-6 sm:mb-8">
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r ${events[selectedEvent].color} bg-clip-text text-transparent`}>
+              <div className="mb-4 sm:mb-6 md:mb-8 pr-8 sm:pr-12">
+                <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r ${events[selectedEvent].color} bg-clip-text text-transparent leading-tight`}>
                   {events[selectedEvent].name}
                 </h2>
-                <div className={`h-1 w-24 bg-gradient-to-r ${events[selectedEvent].color} rounded-full`}></div>
+                <div className={`h-0.5 sm:h-1 w-16 sm:w-20 md:w-24 bg-gradient-to-r ${events[selectedEvent].color} rounded-full`}></div>
               </div>
 
               {/* Detailed Description */}
-              <div className="mb-6 sm:mb-8">
-                <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
+              <div className="mb-4 sm:mb-6 md:mb-8">
+                <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
                   {events[selectedEvent].detailedDescription}
                 </p>
               </div>
 
               {/* Event Images */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                 {events[selectedEvent].images.map((img, idx) => (
                   <div
                     key={idx}
-                    className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden group"
+                    className="relative aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group"
                   >
                     <Image
                       src={img}

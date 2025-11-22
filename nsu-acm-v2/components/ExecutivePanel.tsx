@@ -88,9 +88,9 @@ export default function ExecutivePanel() {
       borderColor: "border-green-500/50",
     },
     {
-      name: "Meherun Nesa Esha",
+      name: "Sajid Hasan Safin",
       designation: "Treasurer",
-      image: "/executive-panel/Meherun Nesa Esha.jpeg",
+      image: "/executive-panel/Sajid Hasan Safin.webp",
       gradient: "from-indigo-500/30 via-blue-500/30 to-purple-500/30",
       borderColor: "border-indigo-500/50",
     },

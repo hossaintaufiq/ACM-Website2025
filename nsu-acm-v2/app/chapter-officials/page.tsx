@@ -412,7 +412,7 @@ export default function ChapterOfficialsPage() {
               { name: "MD. Saroar Mahmud", designation: "Chair", image: "/executive-panel/saroar.jpg", gradient: "from-blue-500/30 via-cyan-500/30 to-teal-500/30", borderColor: "border-blue-500/50" },
               { name: "Tamjidul Islam", designation: "Vice Chair", image: "/executive-panel/Tamjid.jpg", gradient: "from-purple-500/30 via-pink-500/30 to-rose-500/30", borderColor: "border-purple-500/50" },
               { name: "Md. Atikur Rahman Shafi", designation: "Secretary", image: "/executive-panel/Shafi.jpg", gradient: "from-green-500/30 via-emerald-500/30 to-teal-500/30", borderColor: "border-green-500/50" },
-              { name: "Meherun Nesa Esha", designation: "Treasurer", image: "/executive-panel/Meherun Nesa Esha.jpeg", gradient: "from-indigo-500/30 via-blue-500/30 to-purple-500/30", borderColor: "border-indigo-500/50" },
+              { name: "Sajid Hasan Safin", designation: "Treasurer", image: "/executive-panel/Sajid Hasan Safin.webp", gradient: "from-indigo-500/30 via-blue-500/30 to-purple-500/30", borderColor: "border-indigo-500/50" },
               { name: "Noshin Nawar", designation: "Membership Chair", image: "/executive-panel/Noshin.JPG", gradient: "from-pink-500/30 via-rose-500/30 to-red-500/30", borderColor: "border-pink-500/50" },
               { name: "Mubashshira Kaisar", designation: "Webmaster", image: "/executive-panel/Mubashshira.png", gradient: "from-cyan-500/30 via-blue-500/30 to-indigo-500/30", borderColor: "border-cyan-500/50" },
             ].map((member, index) => (

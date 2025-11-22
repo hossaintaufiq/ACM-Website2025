@@ -18,7 +18,7 @@ export default function EventsPage() {
     {
       name: "HackNSU",
       description: "Annual hackathon bringing together developers and innovators from across the region. A 24-48 hour coding marathon where participants build innovative solutions to real-world problems.",
-      icon: "💻",
+      icon: "",
       color: "from-blue-500 to-cyan-500",
       images: [
         "/join-us-gallery/hackNSU1.jpg",
@@ -28,7 +28,7 @@ export default function EventsPage() {
     {
       name: "Technovation",
       description: "Technology innovation showcase and competition where students present cutting-edge projects and compete for recognition. A platform for showcasing technical excellence and creativity.",
-      icon: "🚀",
+      icon: "",
       color: "from-purple-500 to-pink-500",
       images: [
         "/join-us-gallery/innovationChallenge1.jpg",
@@ -38,7 +38,7 @@ export default function EventsPage() {
     {
       name: "Hour of Code",
       description: "Educational coding workshops designed for all skill levels. An initiative to introduce programming concepts to beginners and help them take their first steps in the world of coding.",
-      icon: "📚",
+      icon: "",
       color: "from-green-500 to-emerald-500",
       images: [
         "/join-us-gallery/hoc0.jpg",
@@ -49,7 +49,7 @@ export default function EventsPage() {
     {
       name: "Programming Contest",
       description: "Competitive programming challenges and competitions that test algorithmic thinking and problem-solving skills. Perfect for students who love solving complex coding problems.",
-      icon: "🏆",
+      icon: "",
       color: "from-orange-500 to-red-500",
       images: [
         "/join-us-gallery/result.jpg",
@@ -58,7 +58,7 @@ export default function EventsPage() {
     {
       name: "Innovation Challenge",
       description: "Platform for creative tech solutions and innovative ideas. Students pitch their innovative projects and compete for prizes while solving real-world challenges.",
-      icon: "💡",
+      icon: "",
       color: "from-indigo-500 to-purple-500",
       images: [
         "/join-us-gallery/innovationChallenge3.jpg",

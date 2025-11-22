@@ -148,7 +148,7 @@ export default function WebContributorsPage() {
           <div className="text-center mb-6 sm:mb-8 md:mb-10 px-4">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
               <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-                WEB Version 2.0 Developers
+                WEB Version 2.1 Developers
               </span>
             </h2>
             <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>

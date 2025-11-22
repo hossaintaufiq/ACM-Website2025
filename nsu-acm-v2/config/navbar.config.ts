@@ -30,7 +30,7 @@ export const navbarConfig: NavItem[] = [
     href: "/sponsors",
   },
   {
-    label: "Teams",
+    label: "Core Members",
     href: "#",
     children: [
       {

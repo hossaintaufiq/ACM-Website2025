@@ -44,7 +44,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden pt-4">
+    <div className="relative min-h-screen overflow-hidden pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)]">
           {/* Left Side - Welcome Message */}

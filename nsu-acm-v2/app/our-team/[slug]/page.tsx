@@ -605,9 +605,9 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
         <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-8 sm:mb-12 md:mb-16 overflow-hidden`}>
           <div className={`absolute inset-0 bg-gradient-to-br ${team.gradient} opacity-0 hover:opacity-100 rounded-2xl sm:rounded-3xl transition-opacity duration-500`}></div>
           
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center relative z-10">
-            {/* Left Side - Content */}
-            <div className="order-2 md:order-1">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center relative z-10">
+            {/* Content - Left side on large, top on small */}
+            <div className="order-2 lg:order-1">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
                 About <span className={`bg-gradient-to-r ${team.color} bg-clip-text text-transparent`}>{team.name}</span>
               </h2>
@@ -616,8 +616,8 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
               </p>
             </div>
 
-            {/* Right Side - Unique SVG Design */}
-            <div className="order-1 md:order-2 flex justify-center md:justify-end">
+            {/* SVG Logo - Right side on large, below on small */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <TeamSVG slug={resolvedParams.slug} color={team.color} />
             </div>
           </div>

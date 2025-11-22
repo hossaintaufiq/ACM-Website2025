@@ -180,60 +180,11 @@ main, section, div[class*="relative"] {
 
 /* Gallery Slider Styles */
 .gallery-slider .slick-dots {
-  bottom: -40px !important;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
+  display: none !important;
 }
 
-.gallery-slider .slick-dots li {
-  width: 10px;
-  height: 10px;
-  margin: 0;
-}
-
-.gallery-slider .slick-dots li button {
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.gallery-slider .slick-dots li button:before {
-  display: none;
-}
-
-.gallery-slider .slick-dots li.slick-active button {
-  background: rgba(59, 130, 246, 1);
-  width: 24px;
-  border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-  .gallery-slider .slick-dots {
-    bottom: -35px !important;
-  }
-  
-  .gallery-slider .slick-dots li {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .gallery-slider .slick-dots li button {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .gallery-slider .slick-dots li.slick-active button {
-    width: 20px;
-  }
+.gallery-slider .slick-arrow {
+  display: none !important;
 }
 
 /* About Page Slider Styles */

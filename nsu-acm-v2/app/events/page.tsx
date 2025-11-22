@@ -99,7 +99,8 @@ export default function EventsPage() {
   ];
 
   const gallerySettings = {
-    dots: true,
+    dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -248,7 +249,7 @@ export default function EventsPage() {
               <Slider {...gallerySettings}>
                 {galleryImages.map((img, index) => (
                   <div key={index} className="px-1 sm:px-2 md:px-3">
-                    <div className="relative aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group">
+                    <div className="relative h-48 sm:h-64 md:h-80 lg:h-72 xl:h-80 rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden group">
                       <Image
                         src={img}
                         alt={`Gallery ${index + 1}`}

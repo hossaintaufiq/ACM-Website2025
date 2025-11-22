@@ -230,19 +230,20 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
 
           {/* Content */}
           <div className="relative z-10" style={{ transformStyle: "preserve-3d" }}>
-            {/* Professional Icon */}
-            <div className="mb-3 sm:mb-4 md:mb-5">
-              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${team.color} p-2 sm:p-2.5 md:p-3 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+            {/* Icon and Title Row */}
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-5 mb-3 sm:mb-4">
+              {/* Professional Icon */}
+              <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${team.color} p-2 sm:p-2.5 md:p-3 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
                 <div className="text-white w-full h-full">
                   {team.icon}
                 </div>
               </div>
-            </div>
 
-            {/* Title */}
-            <h3 className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r ${team.color} bg-clip-text text-transparent leading-tight`}>
-              {team.name}
-            </h3>
+              {/* Title */}
+              <h3 className={`flex-1 text-base sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r ${team.color} bg-clip-text text-transparent leading-tight`}>
+                {team.name}
+              </h3>
+            </div>
 
             {/* Description */}
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">

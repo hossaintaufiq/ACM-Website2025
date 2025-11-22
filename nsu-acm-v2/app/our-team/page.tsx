@@ -10,6 +10,7 @@ interface Team {
   color: string;
   icon: React.ReactNode;
   gradient: string;
+  slug: string;
 }
 
 // Professional SVG Icons
@@ -99,6 +100,7 @@ const mainTeams: Team[] = [
     color: "from-emerald-500 to-teal-500",
     icon: TeamIcons.Corporate,
     gradient: "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
+    slug: "team-corporate",
   },
   {
     name: "Team Promotions",
@@ -106,6 +108,7 @@ const mainTeams: Team[] = [
     color: "from-blue-500 to-cyan-500",
     icon: TeamIcons.Promotions,
     gradient: "from-blue-500/20 via-cyan-500/20 to-teal-500/20",
+    slug: "team-promotions",
   },
   {
     name: "Team Provision",
@@ -113,6 +116,7 @@ const mainTeams: Team[] = [
     color: "from-orange-500 to-red-500",
     icon: TeamIcons.Provision,
     gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
+    slug: "team-provision",
   },
   {
     name: "Team Publications",
@@ -120,6 +124,7 @@ const mainTeams: Team[] = [
     color: "from-purple-500 to-pink-500",
     icon: TeamIcons.Publications,
     gradient: "from-purple-500/20 via-pink-500/20 to-rose-500/20",
+    slug: "team-publications",
   },
 ];
 
@@ -130,6 +135,7 @@ const floatingGroups: Team[] = [
     color: "from-indigo-500 to-purple-500",
     icon: TeamIcons.Web,
     gradient: "from-indigo-500/20 via-purple-500/20 to-pink-500/20",
+    slug: "web-group",
   },
   {
     name: "Admin Group",
@@ -137,6 +143,7 @@ const floatingGroups: Team[] = [
     color: "from-slate-500 to-gray-500",
     icon: TeamIcons.Admin,
     gradient: "from-slate-500/20 via-gray-500/20 to-zinc-500/20",
+    slug: "admin-group",
   },
   {
     name: "Design & Decor Group",
@@ -144,6 +151,7 @@ const floatingGroups: Team[] = [
     color: "from-pink-500 to-rose-500",
     icon: TeamIcons.Design,
     gradient: "from-pink-500/20 via-rose-500/20 to-red-500/20",
+    slug: "design-decor-group",
   },
   {
     name: "Research & Development Group",
@@ -151,6 +159,7 @@ const floatingGroups: Team[] = [
     color: "from-green-500 to-emerald-500",
     icon: TeamIcons.Research,
     gradient: "from-green-500/20 via-emerald-500/20 to-teal-500/20",
+    slug: "research-development-group",
   },
   {
     name: "Cultural Group",
@@ -158,6 +167,7 @@ const floatingGroups: Team[] = [
     color: "from-yellow-500 to-orange-500",
     icon: TeamIcons.Cultural,
     gradient: "from-yellow-500/20 via-orange-500/20 to-red-500/20",
+    slug: "cultural-group",
   },
   {
     name: "Photography & Cinematography Group",
@@ -165,6 +175,7 @@ const floatingGroups: Team[] = [
     color: "from-cyan-500 to-blue-500",
     icon: TeamIcons.Photography,
     gradient: "from-cyan-500/20 via-blue-500/20 to-indigo-500/20",
+    slug: "photography-cinematography-group",
   },
 ];
 
@@ -215,13 +226,14 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
       className={`relative ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} transition-all duration-700 ease-out`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div
-        ref={cardRef}
-        className="relative group cursor-pointer"
-        style={{ transformStyle: "preserve-3d" }}
-      >
-        {/* 3D Card */}
-        <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-2xl ${isFloating ? "hover:shadow-purple-500/30" : "hover:shadow-blue-500/30"}`}>
+      <Link href={`/our-team/${team.slug}`}>
+        <div
+          ref={cardRef}
+          className="relative group cursor-pointer"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {/* 3D Card */}
+          <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-2xl ${isFloating ? "hover:shadow-purple-500/30" : "hover:shadow-blue-500/30"}`}>
           {/* Gradient Background */}
           <div className={`absolute inset-0 bg-gradient-to-br ${team.gradient} opacity-0 group-hover:opacity-100 rounded-2xl sm:rounded-3xl transition-opacity duration-500`}></div>
 
@@ -257,7 +269,8 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
           {/* 3D Edge Highlights */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }

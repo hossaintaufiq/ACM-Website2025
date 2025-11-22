@@ -9,15 +9,28 @@ const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function EventsPage() {
   const [isMounted, setIsMounted] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
 
   useEffect(() => {
     setIsMounted(true);
+  }, []);
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedEvent(null);
+      }
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
   }, []);
 
   const events = [
     {
       name: "HackNSU",
       description: "Annual hackathon bringing together developers and innovators from across the region. A 24-48 hour coding marathon where participants build innovative solutions to real-world problems.",
+      detailedDescription: "HackNSU is our flagship annual hackathon event that brings together the brightest minds in technology. Over 24-48 hours, participants work in teams to build innovative solutions addressing real-world challenges. The event features workshops, mentorship sessions, and networking opportunities with industry professionals. Winners receive exciting prizes and recognition, with opportunities for further development and potential startup support.",
       icon: "",
       color: "from-blue-500 to-cyan-500",
       images: [
@@ -28,6 +41,7 @@ export default function EventsPage() {
     {
       name: "Technovation",
       description: "Technology innovation showcase and competition where students present cutting-edge projects and compete for recognition. A platform for showcasing technical excellence and creativity.",
+      detailedDescription: "Technovation is a comprehensive technology innovation showcase where students present their cutting-edge projects and compete for recognition. This event serves as a platform for showcasing technical excellence, creativity, and innovation. Participants get the opportunity to demonstrate their skills, receive feedback from industry experts, and network with peers and professionals. The event includes multiple categories covering various aspects of technology and innovation.",
       icon: "",
       color: "from-purple-500 to-pink-500",
       images: [
@@ -38,6 +52,7 @@ export default function EventsPage() {
     {
       name: "Hour of Code",
       description: "Educational coding workshops designed for all skill levels. An initiative to introduce programming concepts to beginners and help them take their first steps in the world of coding.",
+      detailedDescription: "Hour of Code is an educational initiative designed to introduce programming concepts to beginners and help them take their first steps in the world of coding. These workshops are structured for all skill levels, from complete beginners to those looking to expand their knowledge. The sessions cover fundamental programming concepts, hands-on coding exercises, and provide a supportive learning environment. Participants work on real projects and receive guidance from experienced mentors.",
       icon: "",
       color: "from-green-500 to-emerald-500",
       images: [
@@ -49,6 +64,7 @@ export default function EventsPage() {
     {
       name: "Programming Contest",
       description: "Competitive programming challenges and competitions that test algorithmic thinking and problem-solving skills. Perfect for students who love solving complex coding problems.",
+      detailedDescription: "Our Programming Contest is a competitive event designed to test algorithmic thinking and problem-solving skills. Perfect for students who love solving complex coding problems, the contest features challenging problems that require creative thinking and efficient solutions. Participants compete individually or in teams, solving problems within time constraints. The event helps improve coding skills, logical thinking, and prepares participants for competitive programming platforms and technical interviews.",
       icon: "",
       color: "from-orange-500 to-red-500",
       images: [
@@ -58,6 +74,7 @@ export default function EventsPage() {
     {
       name: "Innovation Challenge",
       description: "Platform for creative tech solutions and innovative ideas. Students pitch their innovative projects and compete for prizes while solving real-world challenges.",
+      detailedDescription: "The Innovation Challenge provides a platform for creative tech solutions and innovative ideas. Students pitch their innovative projects and compete for prizes while addressing real-world challenges. The event encourages entrepreneurship and innovation, with participants presenting their ideas to a panel of judges including industry experts and academic professionals. Winners receive mentorship opportunities, prizes, and potential support for further development of their projects.",
       icon: "",
       color: "from-indigo-500 to-purple-500",
       images: [
@@ -141,8 +158,13 @@ export default function EventsPage() {
                   <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6">
                     {event.description}
                   </p>
-                  <div className={`inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r ${event.color} text-white font-semibold text-xs sm:text-sm md:text-base transform group-hover:scale-105 transition-transform duration-300`}>
-                    Learn More
+                  <div className="flex justify-center md:justify-start">
+                    <button
+                      onClick={() => setSelectedEvent(index)}
+                      className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r ${event.color} text-white font-semibold text-xs sm:text-sm md:text-base transform hover:scale-105 transition-transform duration-300 cursor-pointer`}
+                    >
+                      Learn More
+                    </button>
                   </div>
                 </div>
 
@@ -241,6 +263,66 @@ export default function EventsPage() {
           )}
         </div>
       </div>
+
+      {/* Event Detail Modal */}
+      {selectedEvent !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={() => setSelectedEvent(null)}
+        >
+          <div
+            className={`relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl border-2 border-white/10 shadow-2xl ${events[selectedEvent].color.replace('from-', 'border-').replace('to-', '/50')}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-white transition-all duration-300 hover:scale-110"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Modal Content */}
+            <div className="p-6 sm:p-8 md:p-10">
+              {/* Event Header */}
+              <div className="mb-6 sm:mb-8">
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r ${events[selectedEvent].color} bg-clip-text text-transparent`}>
+                  {events[selectedEvent].name}
+                </h2>
+                <div className={`h-1 w-24 bg-gradient-to-r ${events[selectedEvent].color} rounded-full`}></div>
+              </div>
+
+              {/* Detailed Description */}
+              <div className="mb-6 sm:mb-8">
+                <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
+                  {events[selectedEvent].detailedDescription}
+                </p>
+              </div>
+
+              {/* Event Images */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                {events[selectedEvent].images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden group"
+                  >
+                    <Image
+                      src={img}
+                      alt={`${events[selectedEvent].name} ${idx + 1}`}
+                      fill
+                      className="object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 50vw"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${events[selectedEvent].color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

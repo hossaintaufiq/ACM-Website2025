@@ -91,6 +91,11 @@ main, section, div[class*="relative"] {
   margin: 0 -8px;
 }
 
+.our-events-slider .slick-track {
+  transition: transform 2000ms linear !important;
+  will-change: transform;
+}
+
 /* Force single card on mobile - ensure proper width calculation */
 @media (max-width: 768px) {
   .our-events-slider {
@@ -121,61 +126,11 @@ main, section, div[class*="relative"] {
 }
 
 .our-events-slider .slick-dots {
-  bottom: -40px !important;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
+  display: none !important;
 }
 
-.our-events-slider .slick-dots li {
-  width: 10px;
-  height: 10px;
-  margin: 0;
-}
-
-.our-events-slider .slick-dots li button {
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.our-events-slider .slick-dots li button:before {
-  display: none;
-}
-
-.our-events-slider .slick-dots li.slick-active button {
-  background: rgba(59, 130, 246, 1);
-  width: 24px;
-  border-radius: 5px;
-}
-
-/* Mobile specific adjustments */
-@media (max-width: 768px) {
-  .our-events-slider .slick-dots {
-    bottom: -35px !important;
-  }
-  
-  .our-events-slider .slick-dots li {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .our-events-slider .slick-dots li button {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .our-events-slider .slick-dots li.slick-active button {
-    width: 20px;
-  }
+.our-events-slider .slick-arrow {
+  display: none !important;
 }
 
 /* Gallery Slider Styles */

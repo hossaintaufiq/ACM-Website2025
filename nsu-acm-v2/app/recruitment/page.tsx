@@ -273,7 +273,7 @@ export default function RecruitmentPage() {
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Our Floating Groups
+                  Our Team
                 </span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto">

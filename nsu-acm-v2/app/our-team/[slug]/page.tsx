@@ -569,7 +569,7 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Team Not Found</h1>
           <Link href="/our-team" className="text-blue-400 hover:text-blue-300">
-            Return to Our Floating Groups
+            Return to Our Team
           </Link>
         </div>
       </div>
@@ -587,7 +587,7 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
           <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          <span className="text-sm sm:text-base">Back to Our Floating Groups</span>
+          <span className="text-sm sm:text-base">Back to Our Team</span>
         </Link>
 
         {/* Team Header */}

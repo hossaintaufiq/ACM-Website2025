@@ -96,7 +96,7 @@ const TeamIcons = {
 const mainTeams: Team[] = [
   {
     name: "Team Corporate",
-    description: "Sponsorship acquisition and corporate relations",
+    description: "Sponsorship acquisition and corporate relations. They build strategic partnerships with industry leaders and secure essential funding for chapter initiatives. Their expertise in negotiation and relationship management ensures sustainable growth and impactful collaborations.",
     color: "from-emerald-500 to-teal-500",
     icon: TeamIcons.Corporate,
     gradient: "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
@@ -104,7 +104,7 @@ const mainTeams: Team[] = [
   },
   {
     name: "Team Promotions",
-    description: "Graphic design and creative content creation",
+    description: "Graphic design and creative content creation. They craft visually compelling materials that capture attention and communicate our message effectively. Their innovative designs and artistic vision bring every event and initiative to life with professional branding.",
     color: "from-blue-500 to-cyan-500",
     icon: TeamIcons.Promotions,
     gradient: "from-blue-500/20 via-cyan-500/20 to-teal-500/20",
@@ -112,7 +112,7 @@ const mainTeams: Team[] = [
   },
   {
     name: "Team Provision",
-    description: "Event organization and logistics management",
+    description: "Event organization and logistics management. They coordinate every detail from venue setup to execution, ensuring seamless operations. Their meticulous planning and organizational skills guarantee that every event runs smoothly and exceeds expectations.",
     color: "from-orange-500 to-red-500",
     icon: TeamIcons.Provision,
     gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
@@ -120,7 +120,7 @@ const mainTeams: Team[] = [
   },
   {
     name: "Team Publications",
-    description: "Content writing and public speaking",
+    description: "Content writing and public speaking. They create engaging written materials and provide skilled anchors for events. Their communication expertise ensures that our message reaches audiences clearly and professionally, both in writing and through live presentations.",
     color: "from-purple-500 to-pink-500",
     icon: TeamIcons.Publications,
     gradient: "from-purple-500/20 via-pink-500/20 to-rose-500/20",
@@ -131,7 +131,7 @@ const mainTeams: Team[] = [
 const floatingGroups: Team[] = [
   {
     name: "Web Group",
-    description: "Website development and maintenance",
+    description: "Website development and maintenance. They create and maintain our digital presence using modern web technologies. Their technical expertise ensures our website is user-friendly, responsive, and always up-to-date with the latest information.",
     color: "from-indigo-500 to-purple-500",
     icon: TeamIcons.Web,
     gradient: "from-indigo-500/20 via-purple-500/20 to-pink-500/20",
@@ -139,7 +139,7 @@ const floatingGroups: Team[] = [
   },
   {
     name: "Admin Group",
-    description: "Administrative support and coordination",
+    description: "Administrative support and coordination. They handle documentation, member management, and ensure smooth operations across all teams. Their organizational skills and attention to detail keep the chapter running efficiently and professionally.",
     color: "from-slate-500 to-gray-500",
     icon: TeamIcons.Admin,
     gradient: "from-slate-500/20 via-gray-500/20 to-zinc-500/20",
@@ -147,7 +147,7 @@ const floatingGroups: Team[] = [
   },
   {
     name: "Design & Decor Group",
-    description: "Event decoration and visual design",
+    description: "Event decoration and visual design. They transform event spaces into captivating environments that enhance the overall experience. Their creative vision and attention to detail create memorable atmospheres for all chapter activities.",
     color: "from-pink-500 to-rose-500",
     icon: TeamIcons.Design,
     gradient: "from-pink-500/20 via-rose-500/20 to-red-500/20",
@@ -155,7 +155,7 @@ const floatingGroups: Team[] = [
   },
   {
     name: "Research & Development Group",
-    description: "Technical research and innovation projects",
+    description: "Technical research and innovation projects. They explore cutting-edge technologies and develop innovative solutions. Their research initiatives contribute to the advancement of computing knowledge and position our chapter as a leader in technical innovation.",
     color: "from-green-500 to-emerald-500",
     icon: TeamIcons.Research,
     gradient: "from-green-500/20 via-emerald-500/20 to-teal-500/20",
@@ -163,7 +163,7 @@ const floatingGroups: Team[] = [
   },
   {
     name: "Cultural Group",
-    description: "Cultural events and activities",
+    description: "Cultural events and activities. They organize programs that celebrate diversity and creativity within our community. Their events bring members together and foster a vibrant, inclusive environment that goes beyond technology.",
     color: "from-yellow-500 to-orange-500",
     icon: TeamIcons.Cultural,
     gradient: "from-yellow-500/20 via-orange-500/20 to-red-500/20",
@@ -171,7 +171,7 @@ const floatingGroups: Team[] = [
   },
   {
     name: "Media and Documentation Group",
-    description: "Event documentation and media production",
+    description: "Event documentation and media production. They capture high-quality photos and videos that showcase our chapter's work and preserve memories. Their visual storytelling skills communicate the impact of our activities through compelling media content.",
     color: "from-cyan-500 to-blue-500",
     icon: TeamIcons.Photography,
     gradient: "from-cyan-500/20 via-blue-500/20 to-indigo-500/20",
@@ -295,7 +295,7 @@ export default function OurTeamPage() {
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-6 px-2 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-              OUR FLOATING GROUPS
+              OUR TEAM
             </span>
           </h1>
           <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">

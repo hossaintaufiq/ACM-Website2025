@@ -254,7 +254,7 @@ export default function ExChapterOfficialsPage() {
         {/* Year Sections */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-4">
             <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-              EX-CHAPTER OFFICIALS
+              FORMER CHAPTER OFFICIALS
             </span>
           </h1>
         <YearSection year="2024" members={exOfficials2024} />

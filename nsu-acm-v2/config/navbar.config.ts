@@ -38,7 +38,7 @@ export const navbarConfig: NavItem[] = [
         href: "/chapter-officials",
       },
       {
-        label: "Ex-Chapter Officials",
+        label: "Former Chapter Officials",
         href: "/ex-chapter-officials",
       },
       {

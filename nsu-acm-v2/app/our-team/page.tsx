@@ -233,7 +233,7 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* 3D Card */}
-          <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-2xl ${isFloating ? "hover:shadow-purple-500/30" : "hover:shadow-blue-500/30"}`}>
+          <div className={`relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-500 hover:border-white/30 hover:shadow-2xl h-full flex flex-col ${isFloating ? "hover:shadow-purple-500/30" : "hover:shadow-blue-500/30"}`}>
           {/* Gradient Background */}
           <div className={`absolute inset-0 bg-gradient-to-br ${team.gradient} opacity-0 group-hover:opacity-100 rounded-2xl sm:rounded-3xl transition-opacity duration-500`}></div>
 
@@ -241,7 +241,7 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
           <div className={`absolute -inset-1 bg-gradient-to-br ${team.color} opacity-0 group-hover:opacity-20 blur-xl rounded-2xl sm:rounded-3xl transition-opacity duration-500 -z-10`}></div>
 
           {/* Content */}
-          <div className="relative z-10" style={{ transformStyle: "preserve-3d" }}>
+          <div className="relative z-10 flex flex-col h-full" style={{ transformStyle: "preserve-3d" }}>
             {/* Icon and Title Row */}
             <div className="flex items-center gap-3 sm:gap-4 md:gap-5 mb-3 sm:mb-4">
               {/* Professional Icon */}
@@ -257,13 +257,23 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
               </h3>
             </div>
 
-            {/* Description */}
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            {/* Description - flex-grow to push button down */}
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed flex-grow">
               {team.description}
             </p>
 
+            {/* Details Button - Centered */}
+            <div className="my-6 flex items-center justify-center">
+              <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${team.color} bg-opacity-10 hover:bg-opacity-20 border border-white/10 hover:border-white/30 rounded-lg transition-all duration-300 group-hover:scale-105`}>
+                <span className="text-xs sm:text-sm font-semibold text-white">View Details</span>
+                <svg className="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
             {/* Decorative Element */}
-            <div className={`mt-3 sm:mt-4 h-0.5 w-full bg-gradient-to-r ${team.color} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
+            <div className={`h-0.5 w-full bg-gradient-to-r ${team.color} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
           </div>
 
           {/* 3D Edge Highlights */}
@@ -349,7 +359,7 @@ export default function OurTeamPage() {
 
               {/* Team Cards */}
               {mainTeams.map((team, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative h-full">
                   <TeamCard3D team={team} index={index} isFloating={false} />
                 </div>
               ))}
@@ -387,7 +397,7 @@ export default function OurTeamPage() {
 
               {/* Group Cards */}
               {floatingGroups.map((group, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative h-full">
                   <TeamCard3D team={group} index={index} isFloating={true} />
                 </div>
               ))}
@@ -411,7 +421,7 @@ export default function OurTeamPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               { name: "Chapter Officials", href: "/chapter-officials", color: "from-blue-500 to-cyan-500" },
-              { name: "Ex-Chapter Officials", href: "/ex-chapter-officials", color: "from-purple-500 to-pink-500" },
+              { name: "Former Chapter Officials", href: "/ex-chapter-officials", color: "from-purple-500 to-pink-500" },
               { name: "Web Contributors", href: "/web-contributors", color: "from-green-500 to-emerald-500" },
             ].map((link, index) => (
               <Link

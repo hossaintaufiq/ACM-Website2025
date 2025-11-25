@@ -83,7 +83,7 @@ export default function AboutPage() {
     "Design & Decor Group",
     "Research & Development Group",
     "Cultural Group",
-    "Photography & Cinematography Group",
+    "Media and Documentation Group",
   ];
 
   const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => {

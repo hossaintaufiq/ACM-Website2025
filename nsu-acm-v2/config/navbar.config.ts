@@ -18,7 +18,7 @@ export const navbarConfig: NavItem[] = [
     href: "/events",
   },
   {
-    label: "Our Team",
+    label: "Our Floating Groups",
     href: "/our-team",
   },
   {

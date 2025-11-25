@@ -197,10 +197,10 @@ const teamsData: Record<string, TeamData> = {
       { name: "Jukta Bhowmik", image: "/teams/moderators/Cultural/Jukta_Bhowmik.webp" },
     ],
   },
-  "photography-cinematography-group": {
-    name: "Photography & Cinematography Group",
+  "media-documentation-group": {
+    name: "Media and Documentation Group",
     description: "Event documentation and media production",
-    detailedDescription: "The Photography & Cinematography Group captures and documents all chapter events and activities. They create high-quality photos and videos that showcase the chapter's work, preserve memories, and create promotional content. Their visual storytelling skills help communicate the impact and value of NSU ACM Student Chapter's activities to a wider audience.",
+    detailedDescription: "The Media and Documentation Group captures and documents all chapter events and activities. They create high-quality photos and videos that showcase the chapter's work, preserve memories, and create promotional content. Their visual storytelling skills help communicate the impact and value of NSU ACM Student Chapter's activities to a wider audience.",
     color: "from-cyan-500 to-blue-500",
     icon: null,
     gradient: "from-cyan-500/20 via-blue-500/20 to-indigo-500/20",
@@ -473,7 +473,7 @@ function TeamSVG({ slug, color }: { slug: string; color: string }) {
         </svg>
       );
     
-    case "photography-cinematography-group":
+    case "media-documentation-group":
       return (
         <svg className={svgClass} viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -569,7 +569,7 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Team Not Found</h1>
           <Link href="/our-team" className="text-blue-400 hover:text-blue-300">
-            Return to Our Team
+            Return to Our Floating Groups
           </Link>
         </div>
       </div>
@@ -587,7 +587,7 @@ export default function TeamDetailPage({ params }: { params: Promise<{ slug: str
           <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          <span className="text-sm sm:text-base">Back to Our Team</span>
+          <span className="text-sm sm:text-base">Back to Our Floating Groups</span>
         </Link>
 
         {/* Team Header */}

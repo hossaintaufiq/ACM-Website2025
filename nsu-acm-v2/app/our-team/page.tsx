@@ -170,12 +170,12 @@ const floatingGroups: Team[] = [
     slug: "cultural-group",
   },
   {
-    name: "Photography & Cinematography Group",
+    name: "Media and Documentation Group",
     description: "Event documentation and media production",
     color: "from-cyan-500 to-blue-500",
     icon: TeamIcons.Photography,
     gradient: "from-cyan-500/20 via-blue-500/20 to-indigo-500/20",
-    slug: "photography-cinematography-group",
+    slug: "media-documentation-group",
   },
 ];
 
@@ -295,7 +295,7 @@ export default function OurTeamPage() {
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-6 px-2 leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-              OUR TEAM
+              OUR FLOATING GROUPS
             </span>
           </h1>
           <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">

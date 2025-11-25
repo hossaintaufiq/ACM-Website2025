@@ -41,7 +41,6 @@ const teamsData: Record<string, TeamData> = {
     incharges: [
       { name: "Anindo Kumar Biswas", image: "/teams/incharges/Corporate/Anindo_Kumar_Biswas.webp" },
       { name: "Al Mustafiz Bappy", image: "/teams/incharges/Corporate/Al_Mustafiz_Bappy.webp" },
-      { name: "Augustine Gomes", image: "/teams/incharges/Corporate/Augustine_Gomes.webp" },
       { name: "Arif Faysal Shakib", image: "/teams/incharges/Corporate/Arif_Faysal_Shakib.webp" },
     ],
   },

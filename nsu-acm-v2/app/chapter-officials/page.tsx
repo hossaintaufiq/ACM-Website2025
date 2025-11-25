@@ -165,27 +165,26 @@ export default function ChapterOfficialsPage() {
         { name: "Sudipta Karmaker", image: "/teams/sub-executives/Corporate/Sudipta_Karmaker.webp" },
         { name: "Atahar Hossain", image: "/teams/sub-executives/Corporate/Atahar_Hossain.webp" },
         { name: "Rayta Binte Noor", image: "/teams/sub-executives/Corporate/Rayta_Binte_Noor.webp" },
+        { name: "Augustine Gomes", image: "/teams/sub-executives/Corporate/Augustine_Gomes.webp" },
       ],
-      columns: "grid-cols-1 md:grid-cols-3",
+      columns: "grid-cols-2 md:grid-cols-4",
     },
     {
       subTitle: "Team Promotions",
       members: [
         { name: "Arefin Amin", image: "/teams/sub-executives/Promotion/Arefin_Amin.webp" },
         { name: "Khondker Tamzidur Rahman", image: "/teams/sub-executives/Promotion/Khondker_Tamzidur_Rahman.webp" },
-        { name: "Afrida Hossain", image: "/teams/sub-executives/Promotion/Afrida_Hossain.webp" },
-        { name: "Abdullah Al Moashin Faisal", image: "/teams/sub-executives/Promotion/Abdullah_Al_Moashin_Faisal.webp" },
       ],
-      columns: "grid-cols-2 md:grid-cols-4",
+      columns: "grid-cols-1 md:grid-cols-2",
     },
     {
       subTitle: "Team Provision",
       members: [
         { name: "Arafat Rahat Efty", image: "/teams/sub-executives/Provision/Arafat_Rahat_Efty.webp" },
-        { name: "Sazid Hasan", image: "/teams/sub-executives/Provision/Sazid_Hasan.webp" },
         { name: "ASM Tayeeb", image: "/teams/sub-executives/Provision/ASM_Tayeeb.webp" },
         { name: "Sajid Rahman", image: "/teams/sub-executives/Provision/Sajid_Rahman_ACM.webp" },
         { name: "Adrito Bhuiyan", image: "/teams/sub-executives/Provision/Adrito_Bhuiyan.webp" },
+        { name: "Ahmed As Sadik", image: "/teams/sub-executives/Provision/Ahmed_As_Sadik.webp" },
       ],
       columns: "grid-cols-2 md:grid-cols-3",
     },
@@ -259,10 +258,9 @@ export default function ChapterOfficialsPage() {
       members: [
         { name: "Anindo Kumar Biswas", image: "/teams/incharges/Corporate/Anindo_Kumar_Biswas.webp" },
         { name: "Al Mustafiz Bappy", image: "/teams/incharges/Corporate/Al_Mustafiz_Bappy.webp" },
-        { name: "Augustine Gomes", image: "/teams/incharges/Corporate/Augustine_Gomes.webp" },
         { name: "Arif Faysal Shakib", image: "/teams/incharges/Corporate/Arif_Faysal_Shakib.webp" },
       ],
-      columns: "grid-cols-2 md:grid-cols-4",
+      columns: "grid-cols-2 md:grid-cols-3",
     },
     {
       subTitle: "Team Promotions",

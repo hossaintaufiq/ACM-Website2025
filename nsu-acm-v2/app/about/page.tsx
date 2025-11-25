@@ -151,7 +151,7 @@ export default function AboutPage() {
                 </span>
               </h1>
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-4 sm:mb-6">
-                Working in NSU since 2017
+                2017 - Present
               </h3>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed mb-4 sm:mb-6">
                 NSU ACM Student Chapter is one of the <span className="text-blue-400 font-semibold">680 chapters</span> around the world and was the <span className="text-purple-400 font-semibold">first student chapter</span> of the Association for Computing Machineries in Bangladesh. It was officially chartered on <span className="text-blue-400 font-semibold">17th January 2017</span>.

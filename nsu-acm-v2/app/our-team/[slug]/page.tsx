@@ -37,6 +37,7 @@ const teamsData: Record<string, TeamData> = {
       { name: "Sudipta Karmaker", image: "/teams/sub-executives/Corporate/Sudipta_Karmaker.webp" },
       { name: "Atahar Hossain", image: "/teams/sub-executives/Corporate/Atahar_Hossain.webp" },
       { name: "Rayta Binte Noor", image: "/teams/sub-executives/Corporate/Rayta_Binte_Noor.webp" },
+      { name: "Augustine Gomes", image: "/teams/sub-executives/Corporate/Augustine_Gomes.webp" },
     ],
     incharges: [
       { name: "Anindo Kumar Biswas", image: "/teams/incharges/Corporate/Anindo_Kumar_Biswas.webp" },
@@ -54,8 +55,6 @@ const teamsData: Record<string, TeamData> = {
     subExecutives: [
       { name: "Arefin Amin", image: "/teams/sub-executives/Promotion/Arefin_Amin.webp" },
       { name: "Khondker Tamzidur Rahman", image: "/teams/sub-executives/Promotion/Khondker_Tamzidur_Rahman.webp" },
-      { name: "Afrida Hossain", image: "/teams/sub-executives/Promotion/Afrida_Hossain.webp" },
-      { name: "Abdullah Al Moashin Faisal", image: "/teams/sub-executives/Promotion/Abdullah_Al_Moashin_Faisal.webp" },
     ],
     incharges: [
       { name: "Shafin Raiyan", image: "/teams/incharges/Promotion/Shafin_Raiyan.webp" },
@@ -74,10 +73,10 @@ const teamsData: Record<string, TeamData> = {
     gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
     subExecutives: [
       { name: "Arafat Rahat Efty", image: "/teams/sub-executives/Provision/Arafat_Rahat_Efty.webp" },
-      { name: "Sazid Hasan", image: "/teams/sub-executives/Provision/Sazid_Hasan.webp" },
       { name: "ASM Tayeeb", image: "/teams/sub-executives/Provision/ASM_Tayeeb.webp" },
       { name: "Sajid Rahman", image: "/teams/sub-executives/Provision/Sajid_Rahman_ACM.webp" },
       { name: "Adrito Bhuiyan", image: "/teams/sub-executives/Provision/Adrito_Bhuiyan.webp" },
+      { name: "Ahmed As Sadik", image: "/teams/sub-executives/Provision/Ahmed_As_Sadik.webp" },
     ],
     incharges: [
       { name: "Adnan Shafi", image: "/teams/incharges/Provision/Adnan_Shafi.webp" },
@@ -88,7 +87,6 @@ const teamsData: Record<string, TeamData> = {
       { name: "Shafaat Bin Zaman", image: "/teams/incharges/Provision/Shafaat_Bin_Zaman.webp" },
       { name: "Shabab Sadatain Jaffry", image: "/teams/incharges/Provision/Shabab_Sadatain_Jaffry.webp" },
       { name: "Tahira Islam Ruba", image: "/teams/incharges/Provision/Tahira_Islam_Ruba.webp" },
-      { name: "Tahmidul Islam", image: "/teams/incharges/Provision/Tahmidul_Islam .webp" },
       { name: "Zaima Hossain", image: "/teams/incharges/Provision/Zaima_Hossain.webp" },
     ],
   },
@@ -140,7 +138,6 @@ const teamsData: Record<string, TeamData> = {
     ],
     moderators: [
       { name: "Rodela Chowdhury", image: "/teams/moderators/Admin/Rodela_Chowdhury.webp" },
-      { name: "Tahmidul Islam", image: "/teams/moderators/Admin/Tahmidul_Islam.webp" },
       { name: "Shabab Sadatain Jaffry", image: "/teams/moderators/Admin/Shabab_Sadatain_Jaffry.webp" },
     ],
   },

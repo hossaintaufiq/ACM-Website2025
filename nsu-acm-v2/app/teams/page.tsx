@@ -232,7 +232,6 @@ export default function TeamsPage() {
         { name: "Shafaat Bin Zaman", image: "/teams/incharges/Provision/Shafaat_Bin_Zaman.webp" },
         { name: "Shabab Sadatain Jaffry", image: "/teams/incharges/Provision/Shabab_Sadatain_Jaffry.webp" },
         { name: "Tahira Islam Ruba", image: "/teams/incharges/Provision/Tahira_Islam_Ruba.webp" },
-        { name: "Tahmidul Islam", image: "/teams/incharges/Provision/Tahmidul_Islam .webp" },
         { name: "Zaima Hossain", image: "/teams/incharges/Provision/Zaima_Hossain.webp" },
       ],
       columns: "grid-cols-2 md:grid-cols-3",
@@ -264,10 +263,9 @@ export default function TeamsPage() {
       subTitle: "Admin Group",
       members: [
         { name: "Rodela Chowdhury", image: "/teams/moderators/Admin/Rodela_Chowdhury.webp" },
-        { name: "Tahmidul Islam", image: "/teams/moderators/Admin/Tahmidul_Islam.webp" },
         { name: "Shabab Sadatain Jaffry", image: "/teams/moderators/Admin/Shabab_Sadatain_Jaffry.webp" },
       ],
-      columns: "grid-cols-1 md:grid-cols-3",
+      columns: "grid-cols-1 md:grid-cols-2",
     },
     {
       subTitle: "Cultural Group",

@@ -226,7 +226,7 @@ export default function ExChapterOfficialsPage() {
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3">
               <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-                EX-FACULTY SPONSOR
+                FORMER-FACULTY SPONSOR
               </span>
             </h2>
             <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -252,7 +252,7 @@ export default function ExChapterOfficialsPage() {
         </div>
 
         {/* Year Sections */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-4 text-center">
             <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
               FORMER CHAPTER OFFICIALS
             </span>

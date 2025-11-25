@@ -61,7 +61,7 @@ export default function ExecutivePanel() {
   const executivePanel = [
     {
       name: "Ms. Silvia Ahmed",
-      designation: "Faculty Sponsor",
+      designation: "Faculty Sponsor <Senior Lecturer @ NSU>",
       image: "/executive-panel/FacultySponsor.webp",
       gradient: "from-yellow-500/30 via-orange-500/30 to-red-500/30",
       borderColor: "border-yellow-500/50",

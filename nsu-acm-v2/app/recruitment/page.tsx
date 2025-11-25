@@ -201,11 +201,19 @@ export default function RecruitmentPage() {
                 
                 <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg">
                   <span className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-slate-300">
-                    Four Core Teams
+                    Four Unique Teams
                   </span>
                   <span className="text-slate-500">✦</span>
                   <span className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-slate-300">
-                    Skill-Based Groups
+                    6 Skill-Based Groups
+                  </span>
+                  <span className="text-slate-500">✦</span>
+                  <span className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-slate-300">
+                    Exceptional Individuals
+                  </span>
+                  <span className="text-slate-500">✦</span>
+                  <span className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-slate-300">
+                    Shared Vision
                   </span>
                   <span className="text-slate-500">✦</span>
                   <span className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-slate-300">
@@ -214,7 +222,7 @@ export default function RecruitmentPage() {
                 </div>
 
                 <p className="text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
-                  Whether you're interested in <span className="text-blue-300">technical development</span>, <span className="text-purple-300">creative design</span>, <span className="text-pink-300">event management</span>, or <span className="text-cyan-300">corporate relations</span>, there's a place for you here.
+                  Whether you're interested in <span className="text-blue-300">technical development</span>, <span className="text-purple-300">creative design</span>, <span className="text-pink-300">event management</span>, or <span className="text-cyan-300">corporate relations</span>, there's a place for you here. Join our <span className="text-purple-300 font-semibold">6 skill-based groups</span> and become part of a community that values innovation and excellence.
                 </p>
               </div>
 
@@ -269,7 +277,7 @@ export default function RecruitmentPage() {
                 </span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto">
-                Join groups based on your skills and interests
+                Explore our 6 skill-based groups and find the perfect fit for your talents and interests
               </p>
             </div>
 

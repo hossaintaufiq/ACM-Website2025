@@ -24,7 +24,7 @@ export default function Navbar() {
               className="h-10 w-10"
             />
             <span className="text-white font-semibold text-lg hidden sm:block">
-              NSU ACM
+              NSU ACM SC
             </span>
           </Link>
 

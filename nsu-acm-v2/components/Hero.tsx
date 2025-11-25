@@ -7,7 +7,7 @@ import AnimatedCounter from "./AnimatedCounter";
 export default function Hero() {
   const computerRef = useRef<HTMLDivElement>(null);
   const [typedText, setTypedText] = useState("");
-  const fullText = "NSU ACM";
+  const fullText = "NSU ACM SC";
 
   useEffect(() => {
     // Typing animation for NSU ACM
@@ -58,7 +58,7 @@ export default function Hero() {
             
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-tight">
               <span className="block bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-                NSU ACM
+                NSU ACM 
               </span>
               <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mt-1">
                 Student Chapter

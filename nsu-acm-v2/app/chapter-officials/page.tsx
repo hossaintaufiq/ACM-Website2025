@@ -382,7 +382,7 @@ export default function ChapterOfficialsPage() {
           <div className="flex justify-center px-2 sm:px-0">
             <TeamMember 
               name="Ms. Silvia Ahmed"
-              designation="Faculty Sponsor"
+              designation="Faculty Sponsor <Senior Lecturer @ NSU ECE Department> "
               image="/executive-panel/FacultySponsor.webp"
               index={0}
               gradient="from-yellow-500/30 via-orange-500/30 to-red-500/30"

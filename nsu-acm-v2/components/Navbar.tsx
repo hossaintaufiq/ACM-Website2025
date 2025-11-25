@@ -3,12 +3,28 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { navbarConfig } from "@/config/navbar.config";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  // Check if a nav item is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
+  // Check if any child of a dropdown is active
+  const hasActiveChild = (children?: { href: string; label: string }[]) => {
+    if (!children) return false;
+    return children.some((child) => isActive(child.href));
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
@@ -21,7 +37,7 @@ export default function Navbar() {
               alt="ACM Logo"
               width={40}
               height={40}
-              className="h-10 w-10"
+              className="h-10 w-auto object-contain"
             />
             <span className="text-white font-semibold text-lg hidden sm:block">
               NSU ACM SC
@@ -35,7 +51,11 @@ export default function Navbar() {
                 {item.children ? (
                   <>
                     <button
-                      className="px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors duration-200 flex items-center gap-1"
+                      className={`px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-1 ${
+                        hasActiveChild(item.children)
+                          ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                          : "text-slate-300 hover:text-white hover:bg-slate-800"
+                      }`}
                       onMouseEnter={() => setOpenDropdown(item.label)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
@@ -52,7 +72,11 @@ export default function Navbar() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 transition-colors duration-200"
+                            className={`block px-4 py-2 transition-all duration-200 ${
+                              isActive(child.href)
+                                ? "text-white bg-slate-700/70 shadow-[0_0_10px_rgba(59,130,246,0.4)] text-shadow-glow"
+                                : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                            }`}
                           >
                             {child.label}
                           </Link>
@@ -63,7 +87,11 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors duration-200"
+                    className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                      isActive(item.href)
+                        ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                        : "text-slate-300 hover:text-white hover:bg-slate-800"
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -92,7 +120,11 @@ export default function Navbar() {
                     <div>
                       <button
                         onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                        className="w-full flex items-center justify-between px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors duration-200"
+                        className={`w-full flex items-center justify-between px-4 py-2 rounded-lg transition-all duration-200 ${
+                          hasActiveChild(item.children)
+                            ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                            : "text-slate-300 hover:text-white hover:bg-slate-800"
+                        }`}
                       >
                         {item.label}
                         <ChevronDown size={16} className={`transition-transform duration-200 ${openDropdown === item.label ? 'rotate-180' : ''}`} />
@@ -107,7 +139,11 @@ export default function Navbar() {
                                 setIsOpen(false);
                                 setOpenDropdown(null);
                               }}
-                              className="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors duration-200"
+                              className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
+                                isActive(child.href)
+                                  ? "text-white bg-slate-800 shadow-[0_0_10px_rgba(59,130,246,0.4)] text-shadow-glow"
+                                  : "text-slate-300 hover:text-white hover:bg-slate-800"
+                              }`}
                             >
                               {child.label}
                             </Link>
@@ -119,7 +155,11 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors duration-200"
+                      className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
+                        isActive(item.href)
+                          ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                          : "text-slate-300 hover:text-white hover:bg-slate-800"
+                      }`}
                     >
                       {item.label}
                     </Link>
@@ -130,6 +170,12 @@ export default function Navbar() {
           </div>
         )}
       </div>
+
+      <style jsx>{`
+        .text-shadow-glow {
+          text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(147, 51, 234, 0.6);
+        }
+      `}</style>
     </nav>
   );
 }

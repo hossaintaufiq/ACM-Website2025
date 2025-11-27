@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useState, useMemo } from "react";
 
 // Professional team member card - ExecutivePanel style, no animations
-function TeamMember({ name, designation, image, index, gradient, borderColor }: { 
-  name: string; 
-  designation?: string; 
-  image: string; 
+function TeamMember({ name, designation, image, index, gradient, borderColor }: {
+  name: string;
+  designation?: string;
+  image: string;
   index: number;
   gradient: string;
   borderColor: string;
@@ -21,14 +21,14 @@ function TeamMember({ name, designation, image, index, gradient, borderColor }: 
       <div className={`relative bg-white/5 backdrop-blur-xl border-2 ${borderColor} rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-5 lg:p-6 h-full flex flex-col items-center shadow-lg`}>
         {/* Gradient Background */}
         <div className={`absolute inset-0 bg-gradient-to-br ${gradient} rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-        
+
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center w-full">
           {/* Image with Frame - Responsive Size */}
           <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 mb-2 sm:mb-3 md:mb-4">
             {/* Outer Glow */}
             <div className={`absolute -inset-1 sm:-inset-2 bg-gradient-to-br ${gradient} rounded-full blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
-            
+
             {/* Circular Image Frame */}
             <div className="relative w-full h-full">
               <div className="absolute inset-0 rounded-full border-2 sm:border-3 border-white/30"></div>
@@ -42,9 +42,8 @@ function TeamMember({ name, designation, image, index, gradient, borderColor }: 
                       src={image}
                       alt={name}
                       fill
-                      className={`object-cover transition-opacity duration-300 ${
-                        imageLoaded ? "opacity-100" : "opacity-0"
-                      }`}
+                      className={`object-cover transition-opacity duration-300 ${imageLoaded ? "opacity-100" : "opacity-0"
+                        }`}
                       loading="lazy"
                       sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, (max-width: 1024px) 144px, (max-width: 1280px) 160px, 176px"
                       onLoad={() => setImageLoaded(true)}
@@ -121,9 +120,9 @@ function YearSection({ year, members }: { year: string; members: Array<{ name: s
         {members.map((member, index) => {
           const gradientIndex = index % gradients.length;
           return (
-            <TeamMember 
-              key={index} 
-              {...member} 
+            <TeamMember
+              key={index}
+              {...member}
               index={index}
               gradient={gradients[gradientIndex]}
               borderColor={borderColors[gradientIndex]}
@@ -213,9 +212,9 @@ export default function ExChapterOfficialsPage() {
               Former Officials
             </span>
           </div>
-          
-          
-          
+
+
+
           <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
             Honoring the past leaders who shaped our chapter
           </p>
@@ -235,14 +234,15 @@ export default function ExChapterOfficialsPage() {
           {/* Ex-Faculty Sponsor Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 px-2 sm:px-0">
             {[
+              { name: "Dr. Shazzad Hossain (SZZ)", designation: "(2016-2017) & (2023-2024)", image: "/teams/ex-faculty/Dr.Shazzad Hosain.jpg", gradient: "from-green-500/30 via-emerald-500/30 to-teal-500/30", borderColor: "border-green-500/50" },
               { name: "DR. TANZILUR RAHMAN (TnR)", designation: "(2021-2023)", image: "/teams/ex-faculty/Dr Tanzilur Rahman.jpg", gradient: "from-yellow-500/30 via-orange-500/30 to-red-500/30", borderColor: "border-yellow-500/50" },
               { name: "Mr. Syed Athar Bin Amir (saa3)", designation: "(2018-2021)", image: "/teams/ex-faculty/syed athar bin amir.jpg", gradient: "from-blue-500/30 via-cyan-500/30 to-teal-500/30", borderColor: "border-blue-500/50" },
               { name: "Mr Zunayeed Bin Zahir (ZbZ)", designation: "(2017-2018)", image: "/teams/ex-faculty/Mr Zunayeed Bin Zahir (ZbZ).jpg", gradient: "from-purple-500/30 via-pink-500/30 to-rose-500/30", borderColor: "border-purple-500/50" },
-              { name: "Dr. Shazzad Hossain (SZZ)", designation: "(2016-2017) & (2023-2024)", image: "/teams/ex-faculty/Dr.Shazzad Hosain.jpg", gradient: "from-green-500/30 via-emerald-500/30 to-teal-500/30", borderColor: "border-green-500/50" },
+
             ].map((member, index) => (
-              <TeamMember 
-                key={index} 
-                {...member} 
+              <TeamMember
+                key={index}
+                {...member}
                 index={index}
                 gradient={member.gradient}
                 borderColor={member.borderColor}
@@ -253,10 +253,10 @@ export default function ExChapterOfficialsPage() {
 
         {/* Year Sections */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-4 text-center">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-              FORMER CHAPTER OFFICIALS
-            </span>
-          </h1>
+          <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+            FORMER CHAPTER OFFICIALS
+          </span>
+        </h1>
         <YearSection year="2024" members={exOfficials2024} />
         <YearSection year="2023" members={exOfficials2023} />
         <YearSection year="2022" members={exOfficials2022} />

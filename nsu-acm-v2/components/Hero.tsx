@@ -88,7 +88,7 @@ export default function Hero() {
               {[
                 { value: 30, label: "Workshops", suffix: "+" },
                 { value: 13, label: "Events", suffix: "+" },
-                { value: 15, label: "Seminars", suffix: "+" },
+                { value: 20, label: "Seminars", suffix: "+" },
               ].map((stat, i) => (
                 <div
                   key={i}

@@ -72,9 +72,9 @@ export default function AboutPage() {
 
   const mainTeams = [
     "Provision",
-    "Promotion",
-    "Publication",
-    "Corporation",
+    "Promotions",
+    "Publications",
+    "Corporate",
   ];
 
   const floatingTeams = [
@@ -95,9 +95,8 @@ export default function AboutPage() {
     return (
       <div
         ref={ref}
-        className={`text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 px-2 ${
-          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transition-all duration-700 ease-out`}
+        className={`text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 px-2 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          } transition-all duration-700 ease-out`}
       >
         <div className="inline-block mb-2 sm:mb-3 md:mb-4">
           <span className="text-xs sm:text-sm md:text-base text-blue-400 font-semibold uppercase tracking-wider">
@@ -123,9 +122,8 @@ export default function AboutPage() {
     return (
       <div
         ref={ref}
-        className={`group relative ${
-          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transition-all duration-500 ease-out`}
+        className={`group relative ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          } transition-all duration-500 ease-out`}
         style={{ transitionDelay: `${index * 100}ms` }}
       >
         <div className="relative h-full rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 sm:p-5 md:p-6 lg:p-8 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20">
@@ -154,11 +152,15 @@ export default function AboutPage() {
                 2017 - Present
               </h3>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed mb-4 sm:mb-6">
-                NSU ACM Student Chapter is one of the <span className="text-blue-400 font-semibold">680 chapters</span> around the world and was the <span className="text-purple-400 font-semibold">first student chapter</span> of the Association for Computing Machineries in Bangladesh. It was officially chartered on <span className="text-blue-400 font-semibold">17th January 2017</span>.
+                NSU ACM Student Chapter is one of the <span className="text-blue-400 font-semibold">680 chapters</span> around the world and was the <span className="text-purple-400 font-semibold">first student chapter</span> of the Association for Computing Machinery in Bangladesh. It was officially chartered on <span className="text-blue-400 font-semibold">17th January 2017</span>.
               </p>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed">
-                NSU ACM SC serves the wide scope of ACM to advance computing as a science and profession. One of the signature events of NSU ACM SC is <span className="text-blue-400 font-semibold">Technovation</span>, which contains versatile competitions for students such as Hackathon, Mobile, and App contest, Megabots Clash, Gaming contest, Robo F1, IT Business Idea Challenge, and so on. Technovation may be considered as a spectacular congregation of incredibly brilliant young minds.
+                NSU ACM SC is committed to advancing computing as both a science and a profession. Our chapter hosts a range of signature events—<span className="text-blue-400 font-semibold">Technovation</span>, <span className="text-blue-400 font-semibold">Innovation Challenge</span>, <span className="text-blue-400 font-semibold">Hour of Code</span>, and <span className="text-blue-400 font-semibold">HackNSU</span>—each designed to inspire creativity, problem-solving, and technical excellence. These events bring together talented students from diverse backgrounds, creating a vibrant platform for innovation, collaboration, and impactful learning.
               </p>
+
+              {/* <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed">
+                NSU ACM SC serves the wide scope of ACM to advance computing as a science and profession. One of the signature events of NSU ACM SC is <span className="text-blue-400 font-semibold">Technovation</span>, which contains versatile competitions for students such as Hackathon, Mobile, and App contest, Megabots Clash, Gaming contest, Robo F1, IT Business Idea Challenge, and so on. Technovation may be considered as a spectacular congregation of incredibly brilliant young minds.
+              </p> */}
             </div>
             <div className="order-1 md:order-2 relative w-full">
               {isMounted && (
@@ -198,7 +200,7 @@ export default function AboutPage() {
       <section className="relative py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <SectionHeader title="ABOUT ACM" />
-          
+
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
             <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed">
@@ -237,7 +239,7 @@ export default function AboutPage() {
       <section className="relative py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <SectionHeader title="WHAT IS NSU ACM SC?" />
-          
+
           <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 md:gap-8 lg:gap-12 items-center">
             <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed">
@@ -295,7 +297,7 @@ export default function AboutPage() {
 
           {/* Floating Team */}
           <div>
-            <SectionHeader title="FLOATING TEAM" />
+            <SectionHeader title="FLOATING GROUP" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               {floatingTeams.map((team, index) => (
                 <TeamCard key={index} name={team} index={index} />

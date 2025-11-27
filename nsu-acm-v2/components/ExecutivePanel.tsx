@@ -130,8 +130,9 @@ export default function ExecutivePanel() {
             EXECUTIVE PANEL
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Meet the dedicated leaders driving innovation and excellence
-          </p>
+  Meet the dedicated leaders driving innovation and excellence for the 2025–2026 tenure.
+</p>
+
         </div>
 
         {/* Faculty Sponsor - Featured with Creative Design */}

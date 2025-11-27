@@ -29,8 +29,8 @@ export default function EventsPage() {
   const events = [
     {
       name: "HackNSU",
-      description: "Annual hackathon bringing together developers and innovators from across the region. A 24-48 hour coding marathon where participants build innovative solutions to real-world problems.",
-      detailedDescription: "HackNSU is our flagship annual hackathon event that brings together the brightest minds in technology. Over 24-48 hours, participants work in teams to build innovative solutions addressing real-world challenges. The event features workshops, mentorship sessions, and networking opportunities with industry professionals. Winners receive exciting prizes and recognition, with opportunities for further development and potential startup support.",
+      description: "Annual hackathon bringing together developers and innovators from across the region. A day-long coding marathon where participants build innovative solutions to real-world problems.",
+      detailedDescription: "HackNSU is our flagship annual hackathon event that brings together the brightest minds in technology. It is organized as a day-long coding marathon where participants work in teams to build innovative solutions addressing real-world challenges. The event includes workshops, mentorship sessions, and networking opportunities with industry professionals. Winners receive exciting prizes and recognition, along with opportunities for further development and potential startup support.",
       icon: "",
       color: "from-blue-500 to-cyan-500",
       images: [
@@ -135,9 +135,8 @@ export default function EventsPage() {
     return (
       <div
         ref={ref}
-        className={`mb-8 sm:mb-12 md:mb-16 lg:mb-20 ${
-          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        } transition-all duration-700 ease-out`}
+        className={`mb-8 sm:mb-12 md:mb-16 lg:mb-20 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          } transition-all duration-700 ease-out`}
         style={{ transitionDelay: `${index * 100}ms` }}
       >
         <div className="relative group">

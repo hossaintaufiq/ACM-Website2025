@@ -231,7 +231,8 @@ export default function ExChapterOfficialsPage() {
             <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
 
-          {/* Ex-Faculty Sponsor Grid */}
+          {/* Ex-Faculty Sponsor Grid eikahe*/}
+
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 px-2 sm:px-0">
             {[
               { name: "Dr. Shazzad Hossain (SZZ)", designation: "(2016-2017) & (2023-2024)", image: "/teams/ex-faculty/Dr.Shazzad Hosain.jpg", gradient: "from-green-500/30 via-emerald-500/30 to-teal-500/30", borderColor: "border-green-500/50" },

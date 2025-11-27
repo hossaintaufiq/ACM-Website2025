@@ -88,7 +88,7 @@ export default function ExecutivePanel() {
       borderColor: "border-green-500/50",
     },
     {
-      name: "Sajid Hasan Safin",
+      name: "Sajid Hasan",
       designation: "Treasurer",
       image: "/executive-panel/Sajid Hasan Safin.webp",
       gradient: "from-indigo-500/30 via-blue-500/30 to-purple-500/30",

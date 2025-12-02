@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import dynamic from "next/dynamic";
+import tecnovision_img from '../../public/Tecnovision/tecnovision.jpg'
+
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
@@ -45,7 +47,7 @@ export default function EventsPage() {
       icon: "",
       color: "from-purple-500 to-pink-500",
       images: [
-        "/join-us-gallery/innovationChallenge1.jpg",
+        "/Tecnovision/tecnovision.jpg",
         "/join-us-gallery/innovationChallenge2.jpg",
       ],
     },
@@ -68,7 +70,7 @@ export default function EventsPage() {
       icon: "",
       color: "from-orange-500 to-red-500",
       images: [
-        "/join-us-gallery/result.jpg",
+      "/programming-contest/programming-contest.jpg",
       ],
     },
     {

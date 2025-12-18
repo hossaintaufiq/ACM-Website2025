@@ -1,6 +1,4 @@
-import Link from "next/link";
 import type { TeamData } from "./TeamDetailClient";
-import TeamDetailClient from "./TeamDetailClient";
 
 // Team data with all members (server-only)
 export const teamsData: Record<string, TeamData> = {
@@ -194,44 +192,4 @@ export const teamsData: Record<string, TeamData> = {
     ],
   },
 };
-
-export function generateStaticParams() {
-  return Object.keys(teamsData).map((slug) => ({
-    slug,
-  }));
-}
-
-export default function TeamDetailPage(props: { params: { slug: string } }) {
-  const { params } = props;
-  // Normalize slug to be extra-safe (handles accidental trailing slashes, encoding issues, etc.)
-  const normalizedSlug = params?.slug
-    ? decodeURIComponent(params.slug).replace(/\/+$/, "")
-    : "";
-  const team = teamsData[normalizedSlug];
-
-  if (!team) {
-    const availableSlugs = Object.keys(teamsData);
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 pt-16 sm:pt-20 md:pt-24 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Team Not Found</h1>
-          <p className="text-slate-300 text-sm mb-2">
-            Debug info (only in dev): slug = <code>{String(params.slug)}</code>, normalizedSlug ={" "}
-            <code>{normalizedSlug}</code>
-          </p>
-          <p className="text-slate-400 text-xs mb-4">
-            Available slugs: {availableSlugs.join(", ")}
-          </p>
-          <Link href="/our-team" className="text-blue-400 hover:text-blue-300">
-            Return to Our Team
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  return <TeamDetailClient slug={params.slug} team={team} />;
-}
-
-
 

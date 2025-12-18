@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import { teamsData } from "./teamData";
 
 interface Team {
   name: string;
@@ -95,35 +96,39 @@ const TeamIcons = {
 
 const mainTeams: Team[] = [
   {
-    name: "Team Corporate",
-    description: "Sponsorship acquisition and corporate relations. They build strategic partnerships with industry leaders and secure essential funding for chapter initiatives. Their expertise in negotiation and relationship management ensures sustainable growth and impactful collaborations.",
-    color: "from-emerald-500 to-teal-500",
+    name: teamsData["team-corporate"].name,
+    description:
+      "Sponsorship acquisition and corporate relations. They build strategic partnerships with industry leaders and secure essential funding for chapter initiatives. Their expertise in negotiation and relationship management ensures sustainable growth and impactful collaborations.",
+    color: teamsData["team-corporate"].color,
     icon: TeamIcons.Corporate,
-    gradient: "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
+    gradient: teamsData["team-corporate"].gradient,
     slug: "team-corporate",
   },
   {
-    name: "Team Promotions",
-    description: "Graphic design and creative content creation. They craft visually compelling materials that capture attention and communicate our message effectively. Their innovative designs and artistic vision bring every event and initiative to life with professional branding.",
-    color: "from-blue-500 to-cyan-500",
+    name: teamsData["team-promotions"].name,
+    description:
+      "Graphic design and creative content creation. They craft visually compelling materials that capture attention and communicate our message effectively. Their innovative designs and artistic vision bring every event and initiative to life with professional branding.",
+    color: teamsData["team-promotions"].color,
     icon: TeamIcons.Promotions,
-    gradient: "from-blue-500/20 via-cyan-500/20 to-teal-500/20",
+    gradient: teamsData["team-promotions"].gradient,
     slug: "team-promotions",
   },
   {
-    name: "Team Provision",
-    description: "Event organization and logistics management. They coordinate every detail from venue setup to execution, ensuring seamless operations. Their meticulous planning and organizational skills guarantee that every event runs smoothly and exceeds expectations.",
-    color: "from-orange-500 to-red-500",
+    name: teamsData["team-provision"].name,
+    description:
+      "Event organization and logistics management. They coordinate every detail from venue setup to execution, ensuring seamless operations. Their meticulous planning and organizational skills guarantee that every event runs smoothly and exceeds expectations.",
+    color: teamsData["team-provision"].color,
     icon: TeamIcons.Provision,
-    gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
+    gradient: teamsData["team-provision"].gradient,
     slug: "team-provision",
   },
   {
-    name: "Team Publications",
-    description: "Content writing and public speaking. They create engaging written materials and provide skilled anchors for events. Their communication expertise ensures that our message reaches audiences clearly and professionally, both in writing and through live presentations.",
-    color: "from-purple-500 to-pink-500",
+    name: teamsData["team-publications"].name,
+    description:
+      "Content writing and public speaking. They create engaging written materials and provide skilled anchors for events. Their communication expertise ensures that our message reaches audiences clearly and professionally, both in writing and through live presentations.",
+    color: teamsData["team-publications"].color,
     icon: TeamIcons.Publications,
-    gradient: "from-purple-500/20 via-pink-500/20 to-rose-500/20",
+    gradient: teamsData["team-publications"].gradient,
     slug: "team-publications",
   },
 ];

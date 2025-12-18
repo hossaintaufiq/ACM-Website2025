@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useInView } from "react-intersection-observer";
 
 // Lazy load icons
 const FacebookIcon = () => (
@@ -51,16 +49,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
-    <footer
-      ref={ref}
-      className="relative bg-gradient-to-b from-transparent via-[#020817]/50 to-[#020817] border-t border-white/10 overflow-hidden"
-    >
+    <footer className="relative bg-gradient-to-b from-transparent via-[#020817]/50 to-[#020817] border-t border-white/10 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -70,11 +60,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Logo and Description */}
-          <div
-            className={`col-span-1 md:col-span-1 flex flex-col items-center md:items-start transition-all duration-1000 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
+          <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
             <div className="relative w-20 h-20 mb-4">
               <Image
                 src="/acm-logo.png"
@@ -91,11 +77,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div
-            className={`col-span-1 transition-all duration-1000 delay-200 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
+          <div className="col-span-1">
             <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {[
@@ -118,11 +100,7 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div
-            className={`col-span-1 transition-all duration-1000 delay-300 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
+          <div className="col-span-1">
             <h3 className="text-white font-semibold text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
               {[
@@ -145,11 +123,7 @@ export default function Footer() {
           </div>
 
           {/* Contact & Social */}
-          <div
-            className={`col-span-1 transition-all duration-1000 delay-400 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
+          <div className="col-span-1">
             <h3 className="text-white font-semibold text-lg mb-4">Connect With Us</h3>
             <div className="space-y-3 mb-6">
               <a
@@ -174,7 +148,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-white/60 ${social.color} transition-all duration-300 transform hover:scale-110 hover:-translate-y-1`}
+                    className={`text-white/60 ${social.color} transition-colors duration-200`}
                     aria-label={social.label}
                   >
                     <Icon />
@@ -186,11 +160,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div
-          className={`mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60 transition-all duration-1000 delay-500 ${
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
           <p>© {new Date().getFullYear()} Copyright NSU ACM SC. All Rights Reserved</p>
           <p className="text-center md:text-right">
             Developed by{" "}

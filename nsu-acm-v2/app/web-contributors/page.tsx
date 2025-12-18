@@ -111,11 +111,11 @@ export default function WebContributorsPage() {
         designation: "Team Leader",
         image: "/teams/coordinators/Web/Hossain_Ahmmed_Taufiq.webp",
       },
-      {
-        name: "Al Mustafiz Bappy",
-        designation: "Moderator",
-        image: "/teams/coordinators/R&D/Al_Mustafiz_Bappy.webp",
-      },
+      // {
+      //   name: "Al Mustafiz Bappy",
+      //   designation: "Moderator",
+      //   image: "/teams/coordinators/R&D/Al_Mustafiz_Bappy.webp",
+      // },
       {
         name: "Ashraful Islam Shohan",
         designation: "Member",
@@ -132,7 +132,7 @@ export default function WebContributorsPage() {
     { name: "Aminul Islam", designation: "Member", image: "/teams/web-contributors/img-1.jpg" },
     { name: "Arefin Amin", designation: "Member", image: "/teams/web-contributors/img-2.jpg" },
     { name: "Sazid Hasan Shafin", designation: "Member", image: "/teams/web-contributors/img-4.jpg" },
-    { name: "Aisha", designation: "Member", image: "/teams/web-contributors/img-5.png" },
+    { name: "Aisha", designation: "Member", image: "/teams/web-contributors/img-5.jpg" },
     { name: "Tahminuzzaman Nahian", designation: "Member", image: "/teams/web-contributors/img-6.jpg" },
     { name: "Shakia Tasnim", designation: "Member", image: "/teams/web-contributors/shakia.jpg" },
     { name: "Rummamil Abrar Ifty", designation: "Member", image: "/teams/web-contributors/rummamil.jpg" },

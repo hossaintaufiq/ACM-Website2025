@@ -51,20 +51,23 @@ export default function Navbar() {
                 {item.children ? (
                   <>
                     <button
-                      className={`px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-1 ${
+                      className={`px-4 py-2 rounded-lg flex items-center gap-1 text-sm lg:text-base ${
                         hasActiveChild(item.children)
-                          ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                          ? "text-white bg-slate-800"
                           : "text-slate-300 hover:text-white hover:bg-slate-800"
                       }`}
                       onMouseEnter={() => setOpenDropdown(item.label)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
                       {item.label}
-                      <ChevronDown size={16} className={`transition-transform duration-200 ${openDropdown === item.label ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        size={16}
+                        className={`${openDropdown === item.label ? "rotate-180" : ""}`}
+                      />
                     </button>
                     {openDropdown === item.label && (
                       <div
-                        className="absolute top-full left-0 mt-1 w-56 bg-slate-800/95 backdrop-blur-md border border-slate-700/50 rounded-lg shadow-xl py-2"
+                        className="absolute top-full left-0 mt-1 w-56 bg-slate-800 border border-slate-700/50 rounded-lg shadow-lg py-2"
                         onMouseEnter={() => setOpenDropdown(item.label)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
@@ -72,9 +75,9 @@ export default function Navbar() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className={`block px-4 py-2 transition-all duration-200 ${
+                            className={`block px-4 py-2 text-sm ${
                               isActive(child.href)
-                                ? "text-white bg-slate-700/70 shadow-[0_0_10px_rgba(59,130,246,0.4)] text-shadow-glow"
+                                ? "text-white bg-slate-700"
                                 : "text-slate-300 hover:text-white hover:bg-slate-700/50"
                             }`}
                           >
@@ -87,9 +90,9 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                    className={`px-4 py-2 rounded-lg text-sm lg:text-base ${
                       isActive(item.href)
-                        ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                        ? "text-white bg-slate-800"
                         : "text-slate-300 hover:text-white hover:bg-slate-800"
                     }`}
                   >
@@ -120,9 +123,9 @@ export default function Navbar() {
                     <div>
                       <button
                         onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                        className={`w-full flex items-center justify-between px-4 py-2 rounded-lg transition-all duration-200 ${
+                        className={`w-full flex items-center justify-between px-4 py-2 rounded-lg text-sm ${
                           hasActiveChild(item.children)
-                            ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                            ? "text-white bg-slate-800"
                             : "text-slate-300 hover:text-white hover:bg-slate-800"
                         }`}
                       >
@@ -139,9 +142,9 @@ export default function Navbar() {
                                 setIsOpen(false);
                                 setOpenDropdown(null);
                               }}
-                              className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
+                              className={`block px-4 py-2 rounded-lg text-sm ${
                                 isActive(child.href)
-                                  ? "text-white bg-slate-800 shadow-[0_0_10px_rgba(59,130,246,0.4)] text-shadow-glow"
+                                  ? "text-white bg-slate-800"
                                   : "text-slate-300 hover:text-white hover:bg-slate-800"
                               }`}
                             >
@@ -155,9 +158,9 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
+                      className={`block px-4 py-2 rounded-lg text-sm ${
                         isActive(item.href)
-                          ? "text-white bg-slate-800 shadow-[0_0_15px_rgba(59,130,246,0.5)] text-shadow-glow"
+                          ? "text-white bg-slate-800"
                           : "text-slate-300 hover:text-white hover:bg-slate-800"
                       }`}
                     >
@@ -171,11 +174,6 @@ export default function Navbar() {
         )}
       </div>
 
-      <style jsx>{`
-        .text-shadow-glow {
-          text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(147, 51, 234, 0.6);
-        }
-      `}</style>
     </nav>
   );
 }

@@ -1,26 +1,12 @@
 "use client";
 
-import { useInView } from "react-intersection-observer";
-
 export default function WhoWeAre() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
   return (
-    <section
-      ref={ref}
-      className="relative py-16 md:py-24 overflow-hidden"
-    >
+    <section className="relative py-16 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
-          <div
-            className={`space-y-6 transition-all duration-1000 ${
-              inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
-          >
+          <div className="space-y-6">
             <div className="inline-block">
               <span className="text-sm md:text-base text-blue-400 font-semibold uppercase tracking-wider">
                 About Us
@@ -57,25 +43,14 @@ export default function WhoWeAre() {
           </div>
 
           {/* Right Side - Simple SVG Graphics - Hidden on smaller devices */}
-          <div
-            className={`hidden lg:flex relative h-[400px] lg:h-[500px] items-center justify-center transition-all duration-1000 delay-300 ${
-              inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
-          >
+          <div className="hidden lg:flex relative h-[400px] lg:h-[500px] items-center justify-center">
             <svg
               viewBox="0 0 600 500"
               className="w-full h-full"
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Background Circle */}
-              <circle
-                cx="300"
-                cy="250"
-                r="200"
-                fill="url(#gradient1)"
-                opacity="0.15"
-                className="animate-pulse"
-              />
+              <circle cx="300" cy="250" r="200" fill="url(#gradient1)" opacity="0.15" />
 
               {/* Main Computer/Device SVG */}
               <g transform="translate(300, 250)">

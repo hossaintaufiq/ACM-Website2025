@@ -70,8 +70,8 @@ function TeamMember({ name, designation, image, index, gradient, borderColor }: 
 
           {/* Designation Badge - Responsive padding */}
           {designation && (
-            <div className={`px-2 py-0.5 sm:px-3 sm:py-1 bg-gradient-to-r ${gradient} backdrop-blur-sm border border-white/20 rounded-full`}>
-              <p className="text-[10px] sm:text-xs md:text-sm text-white font-medium whitespace-nowrap">
+            <div className={`px-2 py-0.5 sm:px-3 sm:py-1 bg-gradient-to-r ${gradient} backdrop-blur-sm border border-white/20 rounded-full max-w-full`}>
+              <p className="text-[10px] sm:text-xs md:text-sm text-white font-medium text-center leading-snug break-words whitespace-normal px-1">
                 {designation}
               </p>
             </div>

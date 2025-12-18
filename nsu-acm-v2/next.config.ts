@@ -1,16 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable static export
-  output: "export",
-
-  // Make Next.js images work without server optimization
+  reactStrictMode: true,
   images: {
     unoptimized: true,
   },
-
-  // React compiler setting (keep it if needed)
-  reactCompiler: true,
+  output: "export", // static export instead of `next export`
+  trailingSlash: true, // ensure routes export as /route/index.html for cPanel/Apache
 };
 
 export default nextConfig;

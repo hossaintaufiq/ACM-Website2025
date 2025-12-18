@@ -104,9 +104,26 @@ export default function WebContributorsPage() {
   ];
 
   // Memoize team data for performance
-  const webContributorsV2 = useMemo(() => [
-    { name: "Hossain Ahmmed Taufiq", designation: "Coordinator", image: "/teams/coordinators/Web/Hossain_Ahmmed_Taufiq.webp" },
-  ], []);
+  const webContributorsV2 = useMemo(
+    () => [
+      {
+        name: "Hossain Ahmmed Taufiq",
+        designation: "Team Leader",
+        image: "/teams/coordinators/Web/Hossain_Ahmmed_Taufiq.webp",
+      },
+      {
+        name: "Al Mustafiz Bappy",
+        designation: "Moderator",
+        image: "/teams/coordinators/R&D/Al_Mustafiz_Bappy.webp",
+      },
+      {
+        name: "Ashraful Islam Shohan",
+        designation: "Member",
+        image: "/teams/web-contributors/ashraful.png",
+      },
+    ],
+    []
+  );
 
   const webContributorsV1 = useMemo(() => [
     { name: "Ahmed Kiser", designation: "Team Leader", image: "/teams/web-contributors/kaiser.jpg" },

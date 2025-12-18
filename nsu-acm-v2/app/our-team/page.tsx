@@ -226,6 +226,7 @@ function TeamCard3D({ team, index, isFloating = false }: { team: Team; index: nu
       className={`relative ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} transition-all duration-700 ease-out`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
+      {/* Link directly to static team detail pages (no dynamic slug) */}
       <Link href={`/our-team/${team.slug}`}>
         <div
           ref={cardRef}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
+// import Link from "next/link";
 
 interface TeamCard {
   name: string;

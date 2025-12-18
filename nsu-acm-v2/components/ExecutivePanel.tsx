@@ -136,10 +136,10 @@ export default function ExecutivePanel() {
         </div>
 
         {/* Faculty Sponsor - Featured with Creative Design */}
-        <div className="flex justify-center mb-16 md:mb-20">
+        <div className="flex justify-center mb-16 md:mb-20 px-4 sm:px-6">
           <div
             ref={(el) => { cardRefs.current[0] = el; }}
-            className="group relative"
+            className="group relative max-w-xs sm:max-w-sm md:max-w-md mx-auto"
             style={{ transformStyle: "preserve-3d" }}
             onMouseEnter={() => setHoveredIndex(0)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -153,7 +153,7 @@ export default function ExecutivePanel() {
             <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 via-orange-500/20 to-red-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             
             {/* Image Container */}
-            <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto">
               {/* Rotating Border */}
               <div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-border animate-spin-slow" style={{ mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)", WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)", maskComposite: "exclude", WebkitMaskComposite: "xor", padding: "4px" }}></div>
               
